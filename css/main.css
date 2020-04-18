@@ -1,3 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Bungee);
+@import url(https://fonts.googleapis.com/css?family=Comfortaa);
+
+
 .jumbotron-picture {
     background-image: url("https://img4.goodfon.com/wallpaper/nbig/0/9b/michelle-lewin-sexy-model-fitness.jpg");
     background-size: cover;
@@ -17,4 +21,25 @@
   
     display: flex;
     align-items: center;
-  }
+}
+
+.breadcrum-link {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.breadcrum-link:hover {
+    color: wheat;
+    text-decoration: underline;
+}
+.bg-black {
+    color: white;
+    background-color: black;
+}
+.bungee {
+    font-family: 'Bungee', cursive;
+}
+.comfortaa {
+    font-family: 'Comfortaa', cursive;
+}
+
