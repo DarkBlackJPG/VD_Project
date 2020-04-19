@@ -39,18 +39,18 @@
                             <a class="dropdown-item" href="#">English</a>
                         </div>
                     </li>
-                    <li class="nav-item active dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Usluge
                         </a>
                         <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item bg-black bg-dark-hover text-danger" href="views/sr/treninzi.html">Treninzi</a>
+                            <a class="dropdown-item bg-black bg-dark-hover" href="views/sr/treninzi.html">Treninzi</a>
                             <a class="dropdown-item bg-black bg-dark-hover" href="#">Nutricionista</a>
                             <a class="dropdown-item bg-black bg-dark-hover"  href="#">Masaze</a>
                         </div>
                     </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Zakazivanje treninga</a>
+                    <a class="nav-link active" href="#">Zakazivanje treninga</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Moj nalog</a>
@@ -84,10 +84,10 @@
                     Izaberite tip treninga
                 </h1>
                 <div class="list-group border rounded border-dark" id="list-tab" role="tablist">
-                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Joga</a>
-                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Cardio</a>
-                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Pilates</a>
-                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Core</a>
+                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action active" id="list-joga-list" data-toggle="list" href="#list-joga" role="tab" aria-controls="joga">Joga</a>
+                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-cardio-list" data-toggle="list" href="#list-cardio" role="tab" aria-controls="cardio">Cardio</a>
+                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-pilates-list" data-toggle="list" href="#list-pilates" role="tab" aria-controls="pilates">Pilates</a>
+                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-core-list" data-toggle="list" href="#list-core" role="tab" aria-controls="core">Core</a>
                   </div>
 
             </div>
@@ -96,17 +96,665 @@
                     Izaberite trening
                 </h1>
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Joga</div>
-                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">Cardio</div>
-                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">Pilates</div>
-                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">Core</div>
+                    <div class="tab-pane fade active show" id="list-joga" role="tabpanel" aria-labelledby="list-joga-list">
+                        <div class="list-group border rounded border-dark" id="list-tab" role="tablist">
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action " id="list-feng-sui-link" data-toggle="list" href="#list-feng-sui" role="tab" aria-controls="feng-sui">Feng sui</a>
+                        <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-moderna-joga-link" data-toggle="list" href="#list-moderna-joga" role="tab" aria-controls="moderna-joga">Moderna joga</a>
+                        <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-stop-joga-link" data-toggle="list" href="#list-stop-joga" role="tab" aria-controls="stop-joga">Stop joga</a>
+                   </div>
+                        </div>
+                    <div class="tab-pane fade" id="list-pilates" role="tabpanel" aria-labelledby="list-pilates-list">
+                        <div class="list-group border rounded border-dark" id="list-tab" role="tablist">
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-stop-pilates-link" data-toggle="list" href="#list-stop-pilates" role="tab" aria-controls="stop-pilates">Stop pilates</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-reformer-pilates-link" data-toggle="list" href="#list-reformer-pilates" role="tab" aria-controls="reformer-pilates">Reformer pilates</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-klasicni-pilates-link" data-toggle="list" href="#list-klasicni-pilates" role="tab" aria-controls="klasicni-pilates">Klasicni pilates</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-core" role="tabpanel" aria-labelledby="list-core-list">
+                        <div class="list-group border rounded border-dark" id="list-tab" role="tablist">
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action " id="list-trbusnjaci-link" data-toggle="list" href="#list-trbusnjaci" role="tab" aria-controls="trbusnjaci">Trbusnjaci</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-trening-izdrzljivosti-link" data-toggle="list" href="#list-trening-izdrzljivosti" role="tab" aria-controls="trening-izdrzljivosti">Trening izdrzljivosti</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-core-box-link" data-toggle="list" href="#list-core-box" role="tab" aria-controls="core-box">Core box</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-sklekovi-link" data-toggle="list" href="#list-sklekovi" role="tab" aria-controls="sklekovi">Sklekovi</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-cardio" role="tabpanel" aria-labelledby="list-cardio-list">
+                        <div class="list-group border rounded border-dark" id="list-tab" role="tablist">
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action " id="list-hiit-link" data-toggle="list" href="#list-hiit" role="tab" aria-controls="hiit">HIIT</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-trcanje-link" data-toggle="list" href="#list-trcanje" role="tab" aria-controls="trcanje">Trcanje</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-stepenice-link" data-toggle="list" href="#list-stepenice" role="tab" aria-controls="stepenice">Stepenice</a>
+                        </div>
+                    </div>
+                   
                   </div>
             </div>
         </div>
         <div class="row p-4 m-0 justify-content-center bg-black border-info border-top border-bottom">
-            <h1 class="bungee">
-                Slobodni termini 
-            </h1>
+            <div class="col-12 text-center">
+                <h1 class="bungee">
+                    Slobodni termini 
+                </h1>
+            </div>
+            
+            <div class="tab-content col-12" id="nav-tabContent">
+                <div class="tab-pane fade col-12" id="list-stop-pilates" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group  rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade col-12" id="list-klasicni-pilates" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group  rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade col-12" id="list-trbusnjaci" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group border rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade col-12" id="list-trening-izdrzljivosti" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group  rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade col-12" id="list-core-box" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group  rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade col-12" id="list-sklekovi" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group  rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade col-12" id="list-hiit" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group  rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade col-12" id="list-trcanje" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group border rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade col-12" id="list-feng-sui" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group  rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade col-12" id="list-moderna-joga" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group  rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade col-12" id="list-stop-joga" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group  rounded border-dark table-responsive-lg" id="list-stop-pilates-data" role="tablist">
+                        <table class="table table-dark table-bordered table-hover text-white table-striped">
+                            <thead>
+                                <tr>
+                                    <td>Datum ponedeljka</td>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>10.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                            <tr>
+                                <td>17.07.2020.</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                                <td>Nema trening</td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>
+                                    Preostalo mesta: 3<br>
+                                    <a href="#" class="btn btn-danger">Zakazi</a>
+                                </td>
+                                <td>Nema</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
         </div>
         
 

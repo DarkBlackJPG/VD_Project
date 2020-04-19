@@ -88,3 +88,11 @@
 .bg-breadcrum {
     background-color: #101010;
 }
+.list-group-item.active {
+    color: #101010;
+    background-color: #5bc0de;
+}
+.list-group-item:hover {
+    color: white;
+    background-color: #292b2c;
+}
