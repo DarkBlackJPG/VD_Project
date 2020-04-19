@@ -9,6 +9,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="js/database.js"></script>
     <script src="js/main.js"></script>
     <link href="css/main.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/662634c78e.js" crossorigin="anonymous"></script>
@@ -44,10 +45,10 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Usluge
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="views/sr/treninzi.html">Treninzi</a>
-                                <a class="dropdown-item" href="#">Nutricionista</a>
-                                <a class="dropdown-item" href="#">Masaze</a>
+                            <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item bg-dark-hover text-white" href="views/sr/treninzi.html">Treninzi</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="#">Nutricionista</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="#">Masaze</a>
                             </div>
                         </li>
                       <li class="nav-item">
@@ -81,28 +82,96 @@
                
            </div>
         </div>
-        <div class="row p-4 m-0">
+        <div class="row p-4 m-0 justify-content-center border-bottom border-top border-info">
+            <div class="col-12 text-center">
+                <div class="row justify-content-center mb-5">
+                    <h1 class="bungee">
+                        Najbolji Anti-fitnes centar u Beogradu!
+                    </h1>
+                </div>
+                <div class="row text-center" style="display: flex; align-items: center;">
+                
+                <img src="assets/woman-prepares-for-workout.jpg" class="col-md-4 rounded mb-3 mb-md-2 img-fluid" >
+                <div class="col-md-4  comfortaa">
+                    <p class="">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptate earum. Commodi, est dolore aliquid rem sint consequatur maxime reprehenderit tempora aliquam temporibus, officia sunt id, vero perferendis nam consectetur.
+                    </p>
+                </div>
+ 
+                <img src="assets/abs-workout-tire.jpg" alt="" class="col-md-4 rounded mb-3 mb-md-2 img-fluid" >
+               
+                </div>
+                
+            </div>
+        </div>
+        <div class="row p-4 m-0 border-bottom border-info comfortaa">
             <div class="col-12 text-center">
                 <h1 class="bungee">
-                    Najbolji Anti-fitnes centar u Beogradu!
+                    Zašto baš mi!
                 </h1>
                 
-                <div class="row comfortaa">
-                    <p class="col-12 offset-md-4 col-md-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptate earum. Commodi, est dolore aliquid rem sint consequatur maxime reprehenderit tempora aliquam temporibus, officia sunt id, vero perferendis nam consectetur.
+               <div class="row  justify-content-center">
+                   <div class="col-12 col-md-4 col-lg-2">
+                    <i style="font-size: 3em;" class="fas text-danger fa-medal mb-2"></i>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, nisi. Voluptate dolores ullam incidunt cum placeat tempore enim deserunt doloremque odit, facere consectetur minus delectus officiis recusandae dolore? Aspernatur, exercitationem?
                     </p>
-                </div>
-                <div class="row comfortaa">
-                    
-                    <p  class="col-12 offset-md-4 col-md-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptate earum. Commodi, est dolore aliquid rem sint consequatur maxime reprehenderit tempora aliquam temporibus, officia sunt id, vero perferendis nam consectetur.
+                   </div>
+                   <div class="col-12 col-md-4 col-lg-2">
+                    <i style="font-size: 3em;" class="fas text-danger fa-dumbbell mb-2"></i>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, nisi. Voluptate dolores ullam incidunt cum placeat tempore enim deserunt doloremque odit, facere consectetur minus delectus officiis recusandae dolore? Aspernatur, exercitationem?
                     </p>
+                   </div>
+                   <div class="col-12 col-md-4 col-lg-2">
+                    <i style="font-size: 3em;" class="fas text-danger fa-apple-alt mb-2"></i>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, nisi. Voluptate dolores ullam incidunt cum placeat tempore enim deserunt doloremque odit, facere consectetur minus delectus officiis recusandae dolore? Aspernatur, exercitationem?
+                    </p>
+                   </div>
+                  
+               </div>
+               <h2 class="bungee mt-3 text-danger">
+                   Rekli su o nama..
+               </h2>
+               <div id="carouselExampleIndicators" class="carousel slide m-5" data-ride="carousel">
+                
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                   <h2>"Najbolji Fitness centar na teritoriji bivse Jugoslavije"</h2>
+                   <br>
+                   <h3>Times New York</h3>
+                  </div>
+                  <div class="carousel-item">
+                    <h2>"Najbolji Fitness centar na teritoriji bivse Jugoslavije"</h2>
+                    <br>
+                    <h3>Times New York</h3>
+                  </div>
+                  <div class="carousel-item">
+                    <h2>"Najbolji Fitness centar na teritoriji bivse Jugoslavije"</h2>
+                   <br>
+                   <h3>Times New York</h3>
+                  </div>
                 </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
                
             </div>
         </div>
-        <hr>
-        <div class="row p-4 m-0 comfortaa">
+        <div class="row p-4 justify-content-center m-0 comfortaa">
+            <h1 class="bungee mb-4">
+                Izdvajamo iz ponude
+            </h1>
             <div class="col-12 justify-content-center card-group">
                 <div class="card text-white bg-dark ml-2 ml-md-3 mb-3 rounded" style="min-width: 18rem;">
                     <div class="card-header text-center bungee"><h3>Pilates ili hamburger 🤔</h3>
@@ -162,7 +231,7 @@
                   </div>
             </div>
         </div>
-        <footer class="page-footer comfortaa font-small blue pt-4 bg-dark border-top">
+        <footer class="page-footer comfortaa font-small blue pt-4 bg-dark border-top border-info">
             <div class="container-fluid">
                 <div class="row m-0">
                     <div class="col-12  col-md-4 ">

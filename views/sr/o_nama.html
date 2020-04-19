@@ -39,12 +39,12 @@
                             <a class="dropdown-item" href="#">English</a>
                         </div>
                     </li>
-                    <li class="nav-item active dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Usluge
                         </a>
                         <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item bg-black bg-dark-hover text-danger" href="views/sr/treninzi.html">Treninzi</a>
+                            <a class="dropdown-item bg-black bg-dark-hover" href="views/sr/treninzi.html">Treninzi</a>
                             <a class="dropdown-item bg-black bg-dark-hover" href="#">Nutricionista</a>
                             <a class="dropdown-item bg-black bg-dark-hover"  href="#">Masaze</a>
                         </div>
@@ -56,7 +56,7 @@
                     <a class="nav-link" href="#">Moj nalog</a>
                   </li>
                   
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="#">O nama</a>
                   </li>
                   
@@ -66,63 +66,36 @@
         </nav>
         <div class="row pl-4 text-white bg-breadcrum">
             <a href="../../index.html" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Main</a>
-            <a href="#" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Treninzi</a>
+            <a href="#" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;O nama</a>
       </div>
     </div>
     </div>
         <div class="jumbotron-fluid vertical-center jumbotron-picture" style="height: 60vh;">
            <div class="container-fluid m-0 p-0 text-center text-white">
                <div class="semi-transparent-bg p-4" style="width:auto">
-                    <h1 style="font-size: 4.5em; "> Treninzi koje pružamo </h1>
+                    <h1 style="font-size: 4.5em;" class="bungee"> Mi smo tu... zbog vas. </h1>
                </div>
            </div>
         </div>
         <div class="row p-4 m-0 justify-content-center bg-black border-info border-top border-bottom">
-            <div class="row"><h1 class="bungee">Smatramo da je u zdravom telu zdrav čips </h1></div>
+        <div class="row"><h1 class="bungee">Istorija koja nas je isklesala da budemo najbolji </h1></div>
             <div class="row justify-content-center"><p class="col-12  col-lg-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloribus molestiae perspiciatis ipsa esse dolor nesciunt pariatur! Ullam sint iusto repellendus itaque aliquid nulla vero numquam, eos placeat, cumque ab?</p>
-            </div>
-            
-            </div>
-        
-        <div class="row p-0 m-0 bg-black justify-content-center p-3 " id="treninzi">
-            
-            <div class="row col-12 text-center justify-content-center">
-                <h1 class="bungee">
-                Tipovi treninga koje pružamo
-                </h1>
-            </div>
-            
-            <div class="row col-12 text-center justify-content-center mb-4">
-                <div class="filters">
-                    <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Svi' }" v-on:click="setFilter('Svi')">Svi</span>
-                    <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Cardio' }" v-on:click="setFilter('Cardio')">Cardio</span>
-                    <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Joga' }" v-on:click="setFilter('Joga')">Joga</span>
-                    <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Pilates' }" v-on:click="setFilter('Pilates')">Pilates</span>
-                    <span class="filter border-bottom border-danger"  v-bind:class="{ active: currentFilter === 'Core' }" v-on:click="setFilter('Core')">Core</span>
-                </div>
-            </div>
-            <div v-if="currentFilter !== 'Svi' && currentFilter === description.category" v-for="description in descriptions" class="mb-3">
-                <h5 class="bungee">{{description.description}}</h5>
-            </div>
-            <transition-group class="row  justify-content-center"  name="projects">
-                
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3" v-if="currentFilter === project.category || currentFilter === 'Svi'" v-bind:key="project.title" v-for="project in projects">
-                    <div class="card col-12 bg-light-black border-secondary rounded-0 border mb-3 p-0">
-                        <img class="card-img-top img-fluid p-0 m-0" width="100%" v-bind:src="project.image">
-                        <div class="card-body text-center">
-                            <a v-bind:href="project.link" class="filter-link bungee"><h4>{{project.title}}</h4></a>
-                            <p> Trajanje: 1h</p>
-                            <p> Tezina: 5</p>
-                        </div>
-
-                        
-                      </div>
-                </div>
-            </transition-group>
-
-
+            </div> 
         </div>
-
+        <div class="row p-4 m-0 justify-content-center bg-black border-info border-top border-bottom">
+            <div class="row"><h1 class="bungee">Pogledajte atmosferu </h1></div>
+            
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+            </div>
+            </div>
+        </div>
+        <div class="row p-4 m-0 justify-content-center bg-black border-info border-top border-bottom">
+            <div class="row"><h1 class="bungee">Naši sertifikati  </h1></div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi rerum libero temporibus dolores hic minus omnis distinctio sit. Mollitia inventore, quisquam aut voluptatibus deleniti quos incidunt eum id maiores temporibus!
+            </div>
+        </div>
+       
         <footer class="page-footer comfortaa text-light font-small blue pt-4 bg-dark border-top">
             <div class="container-fluid">
                 <div class="row m-0">

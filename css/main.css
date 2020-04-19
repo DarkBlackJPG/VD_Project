@@ -43,3 +43,48 @@
     font-family: 'Comfortaa', cursive;
 }
 
+.bg-dark-hover:hover {
+    background-color: gray;
+}
+
+.filter {
+    font-size: 2em;
+    transition: 0.3s;
+    cursor:pointer
+}
+.filter:hover {
+    color: wheat
+}
+
+.projects-enter-active {
+    opacity: 0;
+    transition: 0.3s;
+}
+.projects-leave-active {
+    opacity: 0;
+    transition: 0.3s;
+}
+.projects-enter, .projects-leave-to
+/* .projects-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.filters > .active {
+    color: #d9534f
+}
+
+.filter-link {
+    color: whitesmoke;
+    transition: 0.3s
+}
+.filter-link:hover {
+    text-decoration: none;
+    color: wheat
+}
+.bg-light-black {
+    background-color: #303030;
+}
+.bg-breadcrum {
+    background-color: #101010;
+}
