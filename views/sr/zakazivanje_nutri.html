@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treninzi</title>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     
     <link href="../../css/main.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/662634c78e.js" crossorigin="anonymous"></script>
@@ -92,23 +94,23 @@
                 </h1>
             </div>
             <div class="col-12 mt-5 col-md-9 col-lg-6">
-                <form action="#" method="GET" name="zakaziNutriSr">
+                <form  name="zakaziNutriSr" id="zakaziNutriSr">
                     <div class="form-group row">
                         <label for="inputName" class="col-form-label col-2"> Ime: </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="inputName" name="ime" placeholder="Marko">
+                            <input type="text" class="form-control" id="inputName" name="ime" placeholder="Marko" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputSurname" class="col-form-label col-2"> Prezime: </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="inputSurname" name="prezime" placeholder="Markovic">
+                            <input type="text" class="form-control" id="inputSurname" name="prezime" placeholder="Markovic" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputEmail" class="col-form-label col-2"> Email: </label>
                         <div class="col-10">
-                            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="temp@temp.com">
+                            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="temp@temp.com" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -120,17 +122,17 @@
                     <div class="form-group row">
                         <label for="inputPhone" class="col-form-label col-2"> Telefon: </label>
                         <div class="col-10">
-                            <input type="tel" class="form-control" id="inputPhone" name="tel" placeholder="+381-60-1111-2222" pattern="^[+][0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{3,4}">
+                            <input type="tel" class="form-control" id="inputPhone" name="tel" placeholder="+381-60-1111-2222" pattern="^[+][0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{3,4}" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="textArea" class="col-form-label col-2">Opis: </label>
                         <div class="col-10">
-                            <textarea class="form-control" id="textArea" rows="4" name="opis"></textarea> </div>
+                            <textarea class="form-control" id="textArea" rows="4" name="opis" required></textarea> </div>
                       </div>
                       <div class="form-group row">
                           <div class="col-12">
-                            <button type="submit" class="btn btn-secondary mb-2 float-right">Posalji</button>
+                            <button type="submit" class="btn btn-secondary mb-2 float-right" onclick="nutritionistAppointment(zakaziNutriSr)">Posalji</button>
                           </div>
                         
                       </div>
