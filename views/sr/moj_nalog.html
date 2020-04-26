@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/662634c78e.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload='loadAppointments()'>
     
     <div class="container-fluid p-0 comfortaa"> 
         <div class="row fixed-top">
@@ -84,16 +84,24 @@
             </div>
             <div class="col-12">
                 <div class="row" id="appointmentsMojNalog">
-                    <div class="col-12 col-md-9 col-lg-4">
-                        <div class="card bg-dark">
+                    <div class="col-12 col-md-9 col-lg-4" v-if="hasAppointments">
+                        <div class="card bg-dark" v-for="appointment in appointments">
                             <div class="card-header">
-                                Stop Pilates
+                                {{appointment.name}}
                             </div>
-                            <div class="card-body bg-danger">
-                                Termin: 18h
-                                Dan: Ponedeljak
+                            <div class="card-body bg-secondary">
+                                <h4>Termin: {{appointment.vreme}}<br></h4>
+                                <h4>Dan: {{appointment.dan}}</h4>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-danger" v-bind:id="appointment.id" onclick="cancelTrainingFromMyAcc(this)">
+                                    Otkazi
+                                </button>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-12 col-md-9 col-lg-4 text-center" v-else>
+                        <h1 class="bungee text-warning"> Nemate nista zakazano</h1>
                     </div>
                         
                 </div>

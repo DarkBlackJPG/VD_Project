@@ -722,17 +722,18 @@ function disableButtonDependingOnTime() {
 setInterval(disableButtonDependingOnTime(), 10000)
 
 function userMakeTrainingAppointment(button) {
-	let sessionUser = window.sessionStorage.getItem('userAppointments')
 	let buttonId = $(button).attr('id').split('_')
-	
-	if(sessionUser.includes($(button).attr('id')))
-	{
-		Swal.fire({
-			icon: 'error',
-			title: 'Ne mozete vise puta da zakazete!',
-		  })
-		return
-	}
+	let sessionUser = window.sessionStorage.getItem('userAppointments')
+	if(sessionUser != null) {
+		if(sessionUser.includes($(button).attr('id')))
+		{
+			Swal.fire({
+				icon: 'error',
+				title: 'Ne mozete vise puta da zakazete!',
+			})
+			return
+		}
+	}	
 	
 
 	let trainingName = buttonId[0]
@@ -887,39 +888,99 @@ function massageAppointment(param) {
 		}
 	  })
 }
+function getDay(date) {
+	switch(date){
+		case 1:
+			return 'Ponedeljak'
+		case 2:
+			return 'Utorak'
+		case 3:
+			return 'Sreda'
+		case 4:
+			return 'Cetvrtak'
+		case 5:
+			return 'Petak'
+		case 6:
+			return 'Subota'
+		case 7: 
+			return 'Nedelja'
+	}
+}
 var myAccountVue = null
 function loadAppointments() {
 
-	let sessionAppointment = JSON.parse(window.sessionStorage.getItem('userAppointments')).split(',')
+	let sessionAppointment = window.sessionStorage.getItem('userAppointments')
 	let sessionStorageData = JSON.parse(window.sessionStorage.getItem('treninzi'))
 	let userHasAppointments = sessionAppointment != null
 	let necessaryData = []
-	for(let i of Object.keys(sessionStorageData)) {
-		for(let j = 0; j < sessionStorageData[i].length; j++) {
-			for(let z = 0; z < sessionAppointment.length - 1; z++) {
-				
+	if(userHasAppointments)
+	{	
+		sessionAppointment = sessionAppointment.split(',')
+		
+		for(let i of Object.keys(sessionStorageData)) {
+			for(let j = 0; j < sessionStorageData[i].length; j++) { // vrsta treninga od tipa
+				for(let z = 0; z < sessionAppointment.length - 1; z++) {
+					if('list-'+sessionStorageData[i][j]['name'] == sessionAppointment[z].split('_')[0]) {
+						let index = sessionAppointment[z].split('_')[1]
+						let appointment = sessionStorageData[i][j]['data']['termini'][index]['datum']
+						let myObject = new Object();
+							let tempName = sessionStorageData[i][j]['name'].split('-')
+							let name = ""
+							for(let t = 0; t < tempName.length; t++) {
+								name += tempName[t]+" "
+							}
+							myObject['id'] = sessionAppointment[z]
+							myObject['name'] =name
+							myObject['dan'] = getDay(new Date(appointment).getDay())
+							myObject['vreme'] = (new Date(appointment).getHours() < 10 ? "0"+new Date(appointment).getHours() : new Date(appointment).getHours())
+										  + ":"+
+										  (new Date(appointment).getMinutes() < 10 ? "0"+new Date(appointment).getMinutes() : new Date(appointment).getMinutes())
+						
+							necessaryData.push(myObject)
+					}
+				}
 			}
 		}
 	}
-
 	myAccountVue = new Vue({
 		el: '#appointmentsMojNalog',
 		data: {
 			hasAppointments: userHasAppointments,
-			appointments: [
-				{title: "Stop Pilates", image: "../../assets/trening2.png", category: 'Pilates', link: "stop_pilates.html"},
-				
-			],
+			appointments: 
+				necessaryData,
 		},
 		methods: {
-			setFilter: function(filter) {
-				this.currentFilter = filter;
+			getData: function() {
+				return this.appointments
+			},
+			setData: function(param) {
+				if(Object.keys(param).length === 0 && param.constructor === Object) {
+					this.hasAppointments = false
+				}
+				this.appointments = param
 			}
 		}
+		
 	})
 
 }
+function cancelTrainingFromMyAcc(button) {
 
+	let sessionData = window.sessionStorage.getItem('userAppointments')
+	if(sessionData == null) {
+		return
+	}
+	sessionData = sessionData.replace($(button).attr('id')+',')
+	//window.sessionStorage.setItem('userAppointments', sessionData)
+	let items = myAccountVue.getData()
+	var filtered = items.filter(function(item) { 
+		return item.id != $(button).attr('id');  
+	 });
+	 if(filtered.length == 0) {
+		 filtered = new Object()
+	 }
+	 myAccountVue.setData(filtered)
+}
 /**
  * TODO: Treba napraviti otkazivanje
  * Granicni slucajevi:
