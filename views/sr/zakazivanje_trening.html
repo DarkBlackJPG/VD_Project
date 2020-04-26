@@ -22,21 +22,21 @@
         <div class="col-12 comfortaa">
 
             <nav class="navbar  navbar-expand-lg navbar-dark bg-black">
-                <a class="navbar-brand bungee" href="../../index.html"><img src="../../assets/logo.png" width="50px"/>&nbsp;AlwaysStop Fitness</a>
+                <a class="navbar-brand bungee" href="index.html"><img src="../../assets/logo.png" width="50px"/>&nbsp;AlwaysStop Fitness</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">Početna</a>
+                            <a class="nav-link" href="index.html">Početna</a>
                           </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Jezik
                             </a>
                             <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown2">
-                                <a class="dropdown-item bg-dark-hover text-white" href="#">Srpski</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="index.html">Srpski</a>
                                 <a class="dropdown-item bg-dark-hover text-white" href="../en/index.html">English</a>
                             </div>
                         </li>
@@ -55,7 +55,7 @@
                                 Zakazivanje termina
                             </a>
                             <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown3">
-                                <a class="dropdown-item bg-dark-hover text-danger" href="#">Zakazivanje treninga</a>
+                                <a class="dropdown-item bg-dark-hover text-danger" href="zakazivanje_trening.html">Zakazivanje treninga</a>
                                 <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_nutri.html">Zakazivanje nutricioniste</a>
                                 <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_masaza.html">Zakazivanje masaze</a>
                             </div>
@@ -164,8 +164,8 @@
 
                                 <td class="p-0">
                                   <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 1">
-                                    Vreme: {{termin.vreme}}h <br> {{index}}
-                                    {{index}}
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
                                     Preostalo mesta: {{termin.preostaloMesta}} <br>
                                     <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index" >Zakazi</button>
                                   </div>
@@ -173,42 +173,48 @@
                                 </td>
                                 <td class="p-0">
                                   <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 2">
-                                    Vreme: {{termin.vreme}}h <br> {{index}}
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
                                     Preostalo mesta: {{termin.preostaloMesta}} <br>
                                     <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index">Zakazi</button>
                                   </div>
                                 </td>
                                 <td class="p-0">
                                   <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 3">
-                                    Vreme: {{termin.vreme}}h <br> {{index}}
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
                                     Preostalo mesta: {{termin.preostaloMesta}} <br>
                                     <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)" v-bind:id="training.name+'_'+index">Zakazi</button>
                                   </div>
                                 </td>
                                 <td class="p-0">
                                   <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 4">
-                                    Vreme: {{termin.vreme}}h <br> {{index}}
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
                                     Preostalo mesta: {{termin.preostaloMesta}} <br>
                                     <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index">Zakazi</button>
                                   </div>
                                 </td>
                                 <td class="p-0">
                                   <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 5">
-                                    Vreme: {{termin.vreme}}h <br> {{index}}
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
                                     Preostalo mesta: {{termin.preostaloMesta}} <br>
                                     <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index">Zakazi</button>
                                   </div>
                                 </td>
                                 <td class="p-0">
                                   <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 6">
-                                    Vreme: {{termin.vreme}}h <br> {{index}}
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
                                     Preostalo mesta: {{termin.preostaloMesta}} <br>
                                     <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index">Zakazi</button>
                                   </div>
                                 </td>
                                 <td class="p-0">
-                                  <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 7">
-                                    Vreme: {{termin.vreme}}h <br> {{index}}
+                                  <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 0">
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
                                     Preostalo mesta: {{termin.preostaloMesta}} <br>
                                     <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index">Zakazi</button>
                                   </div>

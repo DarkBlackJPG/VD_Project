@@ -3,76 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pocetna</title>
+    <title>Treninzi</title>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="js/database.js"></script>
-    <script src="js/main.js"></script>
-    <link href="css/main.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    
+    <link href="../../css/main.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/662634c78e.js" crossorigin="anonymous"></script>
+
 </head>
 
-<body>
+<body onload="loadIndexPage()">
     
     <div class="container-fluid bg-black p-0">
         <div class="row fixed-top">
             
             <div class="col-12 comfortaa">
                 
-            <nav class="navbar  navbar-expand-lg navbar-dark bg-black">
-                <a class="navbar-brand bungee" href="#"><img src="assets/logo.png" width="50px"/>&nbsp;AlwaysStop Fitness</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Početna</a>
+                <nav class="navbar  navbar-expand-lg navbar-dark bg-black">
+                    <a class="navbar-brand bungee" href="index.html"><img src="../../assets/logo.png" width="50px"/>&nbsp;AlwaysStop Fitness</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Početna</a>
+                              </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Jezik
+                                </a>
+                                <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown2">
+                                    <a class="dropdown-item bg-dark-hover text-white" href="index.html">Srpski</a>
+                                    <a class="dropdown-item bg-dark-hover text-white" href="../en/index.html">English</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Usluge
+                                </a>
+                                <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item bg-dark-hover text-white" href="treninzi.html">Treninzi</a>
+                                    <a class="dropdown-item bg-dark-hover text-white" href="nutricionista.html">Nutricionista</a>
+                                    <a class="dropdown-item bg-dark-hover text-white" href="masaze.html">Masaze</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown active">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Zakazivanje termina
+                                </a>
+                                <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown3">
+                                    <a class="dropdown-item bg-dark-hover text-danger" href="zakazivanje_trening.html">Zakazivanje treninga</a>
+                                    <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_nutri.html">Zakazivanje nutricioniste</a>
+                                    <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_masaza.html">Zakazivanje masaze</a>
+                                </div>
+                            </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="moj_nalog.html">Moj nalog</a>
                           </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Jezik
-                            </a>
-                            <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown2">
-                                <a class="dropdown-item bg-dark-hover text-white" href="#">Srpski</a>
-                                <a class="dropdown-item bg-dark-hover text-white" href="en/index.html">English</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Usluge
-                            </a>
-                            <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item bg-dark-hover text-white" href="views/sr/treninzi.html">Treninzi</a>
-                                <a class="dropdown-item bg-dark-hover text-white" href="views/sr/nutricionista.html">Nutricionista</a>
-                                <a class="dropdown-item bg-dark-hover text-white" href="views/sr/masaze.html">Masaze</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Zakazivanje termina
-                            </a>
-                            <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown3">
-                                <a class="dropdown-item bg-dark-hover text-white" href="views/sr/zakazivanje_trening.html">Zakazivanje treninga</a>
-                                <a class="dropdown-item bg-dark-hover text-white" href="views/sr/zakazivanje_nutri.html">Zakazivanje nutricioniste</a>
-                                <a class="dropdown-item bg-dark-hover text-white" href="views/sr/zakazivanje_masaza.html">Zakazivanje masaze</a>
-                            </div>
-                        </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="views/sr/moj_nalog.html">Moj nalog</a>
-                      </li>
-                      
-                      <li class="nav-item">
-                        <a class="nav-link" href="views/sr/o_nama.html">O nama</a>
-                      </li>
-                      
-                    </ul>
-                </div>
-
-            </nav>
+    
+                          <li class="nav-item">
+                            <a class="nav-link" href="o_nama.html">O nama</a>
+                          </li>
+    
+                        </ul>
+                    </div>
+    
+                </nav>
             <div class="row pl-4 text-white bg-breadcrum">
                 <a href="#" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Main</a>
           </div>
@@ -175,31 +176,29 @@
                
             </div>
         </div>
-        <div class="row p-4 justify-content-center m-0 comfortaa">
+        <div class="row p-4 justify-content-center m-0 comfortaa" id="ponuda">
             <h1 class="bungee mb-4">
                 Izdvajamo iz ponude
             </h1>
             <div class="col-12 justify-content-center card-group">
-                <div class="card text-white bg-dark ml-2 ml-md-3 mb-3 rounded" style="min-width: 18rem;">
-                    <div class="card-header text-center bungee"><h3>Pilates ili hamburger 🤔</h3>
-                        <br><i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half"></i>
-                        <span>19.222 glasalaca</span>
+                <div :class=" {'card':true,  'text-white':true,  'ml-2':true,  'ml-md-3':true,  'mb-3':true,  'rounded':true, 'bg-dark' : index == 0, 'bg-warning' : index == 1, 'bg-primary' : index == 2}" style="min-width: 18rem;" v-for="(element,index) in elements">
+                    <div class="card-header text-center bungee"><h3>{{element.name}}</h3>
+                        <br>
+                        <span v-html="element.starTextByAverage"></span><span>/{{element.trainingAvgScore}}</span><br>
+                        <span>&nbsp;{{element.numberOfComments}} recenzije</span>
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Dark card title</h5>
-                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quia voluptatem velit totam cupiditate esse consectetur nulla, quos iusto recusandae neque cumque corrupti? Explicabo molestias magnam nisi id consectetur unde! Lorem ipsum dolor sit amet consectetur adipisicing elit. A, nam repellat molestiae itaque consequatur et cupiditate, iste placeat qui veniam ipsam. Deserunt repudiandae totam dolor itaque beatae, cum dignissimos sit?</p>
+                      <!-- <h5 class="card-title">Dark card title</h5> -->
+                      <p class="card-text">{{element.description}}</p>
                       
                     </div>
                     <div class="card-footer">
                         <small class="text-center">
-                            <a href="#" class="btn btn-light">Procitaj jos</a> 
+                            <a v-bind:href="'views/sr/trening.html?type='+element.link" class="btn btn-light">Procitaj jos</a> 
                         </small>
                       </div>
                   </div>
-                  <div  class="card text-white bg-warning ml-2 ml-md-3 mb-3 rounded" style="min-width: 18rem;">
+                  <!-- <div  class="card text-white bg-warning ml-2 ml-md-3 mb-3 rounded" style="min-width: 18rem;">
                     <div class="card-header text-center bungee"><h3>Netflix n chill?</h3>
                         <br><i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -235,7 +234,7 @@
                             <a href="#" class="btn btn-light">Procitaj jos</a> 
                         </small>
                       </div>
-                  </div>
+                  </div> -->
             </div>
         </div>
         <footer class="page-footer comfortaa font-small blue pt-4 bg-dark border-top border-info">
@@ -336,5 +335,6 @@
         </footer>
         
     </div>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

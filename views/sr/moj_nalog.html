@@ -9,6 +9,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     
     <link href="../../css/main.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/662634c78e.js" crossorigin="anonymous"></script>
@@ -21,48 +22,55 @@
                 
             <div class="col-12 comfortaa">
                 <nav class="navbar  navbar-expand-lg navbar-dark bg-black">
-                    <a class="navbar-brand bungee" href="../../index.html"><img src="../../assets/logo.png" width="50px"/>&nbsp;AlwaysStop Fitness</a>
+                    <a class="navbar-brand bungee" href="index.html"><img src="../../assets/logo.png" width="50px"/>&nbsp;AlwaysStop Fitness</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse " id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item ">
-                                <a class="nav-link" href="../../index.html">Početna</a>
-                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Početna</a>
+                              </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Jezik
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                    <a class="dropdown-item" href="#">Srpski</a>
-                                    <a class="dropdown-item" href="#">English</a>
+                                <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown2">
+                                    <a class="dropdown-item bg-dark-hover text-white" href="index.html">Srpski</a>
+                                    <a class="dropdown-item bg-dark-hover text-white" href="../en/index.html">English</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Usluge
                                 </a>
-                                <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item bg-black bg-dark-hover" href="views/sr/treninzi.html">Treninzi</a>
-                                    <a class="dropdown-item bg-black bg-dark-hover" href="#">Nutricionista</a>
-                                    <a class="dropdown-item bg-black bg-dark-hover"  href="#">Masaze</a>
+                                <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item bg-dark-hover text-white" href="treninzi.html">Treninzi</a>
+                                    <a class="dropdown-item bg-dark-hover text-white" href="nutricionista.html">Nutricionista</a>
+                                    <a class="dropdown-item bg-dark-hover text-white" href="masaze.html">Masaze</a>
                                 </div>
                             </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Zakazivanje treninga</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Moj nalog</a>
-                        </li>
-                        
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">O nama</a>
-                        </li>
-                        
+                            <li class="nav-item dropdown active">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Zakazivanje termina
+                                </a>
+                                <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown3">
+                                    <a class="dropdown-item bg-dark-hover text-danger" href="zakazivanje_trening.html">Zakazivanje treninga</a>
+                                    <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_nutri.html">Zakazivanje nutricioniste</a>
+                                    <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_masaza.html">Zakazivanje masaze</a>
+                                </div>
+                            </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="moj_nalog.html">Moj nalog</a>
+                          </li>
+    
+                          <li class="nav-item">
+                            <a class="nav-link" href="o_nama.html">O nama</a>
+                          </li>
+    
                         </ul>
                     </div>
-
+    
                 </nav>
                 <div class="row pl-4 text-white bg-breadcrum">
                     <a href="../../index.html" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Main</a>
@@ -82,31 +90,32 @@
             <div class="col-12 text-center">
                 <h1 class="bungee">Zakazani termini</h1>
             </div>
-            <div class="col-12">
-                <div class="row" id="appointmentsMojNalog">
-                    <div class="col-12 col-md-9 col-lg-4" v-if="hasAppointments">
-                        <div class="card bg-dark" v-for="appointment in appointments">
+            <div class="col-12" id="appointmentsMojNalog">
+                <div class="row"   v-if="hasAppointments == true">
+                    <div class="col-12 col-md-9 col-lg-4 p-2"  v-for="appointment in appointments">
+                        <div class="card bg-dark">
                             <div class="card-header">
                                 {{appointment.name}}
                             </div>
                             <div class="card-body bg-secondary">
                                 <h4>Termin: {{appointment.vreme}}<br></h4>
                                 <h4>Dan: {{appointment.dan}}</h4>
+                                <h4>Datum: {{appointment.datum}}</h4>
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-danger" v-bind:id="appointment.id" onclick="cancelTrainingFromMyAcc(this)">
+                                <button class="btn btn-danger" v-bind:id="appointment.id" onclick="cancelTrainingFromMyAcc(this)" >
                                     Otkazi
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-9 col-lg-4 text-center" v-else>
-                        <h1 class="bungee text-warning"> Nemate nista zakazano</h1>
-                    </div>
+                    
                         
                 </div>
                 
-                
+                <div class="col-12 col-md-9 col-lg-4 text-center" v-if="hasAppointments == false">
+                    <h1 class="bungee text-warning"> Nemate nista zakazano</h1>
+                </div>
             </div>
             
         </div>

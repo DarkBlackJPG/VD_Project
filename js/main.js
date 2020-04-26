@@ -1,24 +1,26 @@
-new Vue({
+
+
+
+var vueForTrainingSearch = new Vue({
 	el: '#treninzi',
 	data: {
 		currentFilter: 'Svi',
-		projects: [
-			{title: "Stop Pilates", image: "../../assets/trening2.png", category: 'Pilates', link: "stop_pilates.html"},
-			{title: "Reformer Pilates", image: "../../assets/trening3.png", category: 'Pilates', link: "reformer_pilates.html"},
-			{title: "Klasicni pilates", image: "../../assets/trening3.png", category: 'Pilates', link: "klasicni_pilates.html"},
-			{title: "Trbusnjaci", image: "../../assets/trening4.png", category: 'Core', link: "trbusnjaci.html"},
-			{title: "Trening izdrzljivosti", image: "../../assets/trening5.png", category: 'Core', link: "trening_izdrzljivosti.html"},
-			{title: "Core Box", image: "../../assets/core-strength-fitness.jpg", category: 'Core', link: "core_box.html"},
-			{title: "Sklekovi", image: "../../assets/Working-Out-With-Chalk.jpg", category: 'Core', link: "sklekovi.html"},
-			{title: "HIIT", image: "../../assets/a-man-grabs-a-metallic-handle-hanging-from-the-ceiling.jpg", category: 'Cardio', link: "hiit.html"},
-			{title: "Trcanje", image: "../../assets/exercise-free-weights.jpg", category: 'Cardio', link: "trcanje.html"},
-			{title: "Stepenice", image: "../../assets/training1.png", category: 'Cardio', link: "stepenice.html"},
-			{title: "Feng Shui", image: "../../assets/woman-prepares-for-workout.jpg", category: 'Joga', link: "feng_shui.html"},
-			{title: "Moderna joga", image: "../../assets/landing.jpg", category: 'Joga', link: "moderna_joga.html"},
-			{title: "Stop Joga", image: "../../assets/landing.png", category: 'Joga', link: "stop_joga.html"},
-
+		projects: [								// Opis pojedinacnih treninga
+			{id: 1,  tezina: 3, trajanje: 60, description: "Lorem ipsum", title: "Stop Pilates", image: "../../assets/trening2.png", category: 'Pilates', link: "stop-pilates"},
+			{id: 2,  tezina: 4, trajanje: 45, description: "Lorem ipsum", title: "Reformer Pilates", image: "../../assets/trening3.png", category: 'Pilates', link: "reformer-pilates"},
+			{id: 3,  tezina: 2, trajanje: 60, description: "Lorem ipsum", title: "Klasicni pilates", image: "../../assets/trening3.png", category: 'Pilates', link: "klasicni-pilates"},
+			{id: 4,  tezina: 1, trajanje: 45, description: "Lorem ipsum", title: "Trbusnjaci", image: "../../assets/trening4.png", category: 'Core', link: "trbusnjaci"},
+			{id: 5,  tezina: 5, trajanje: 60, description: "Lorem ipsum", title: "Trening izdrzljivosti", image: "../../assets/trening5.png", category: 'Core', link: "trening-izdrzljivosti"},
+			{id: 6,  tezina: 5, trajanje: 45, description: "Lorem ipsum", title: "Core Box", image: "../../assets/core-strength-fitness.jpg", category: 'Core', link: "core-box"},
+			{id: 7,  tezina: 4, trajanje: 60, description: "Lorem ipsum", title: "Sklekovi", image: "../../assets/Working-Out-With-Chalk.jpg", category: 'Core', link: "sklekovi"},
+			{id: 8,  tezina: 3, trajanje: 55, description: "Lorem ipsum", title: "HIIT", image: "../../assets/a-man-grabs-a-metallic-handle-hanging-from-the-ceiling.jpg", category: 'Cardio', link: "hiit"},
+			{id: 9,  tezina: 2, trajanje: 74, description: "Lorem ipsum", title: "Trcanje", image: "../../assets/exercise-free-weights.jpg", category: 'Cardio', link: "trcanje"},
+			{id: 10, tezina: 3, trajanje: 66, description: "Lorem ipsum",  title: "Stepenice", image: "../../assets/training1.png", category: 'Cardio', link: "stepenice"},
+			{id: 11, tezina: 3, trajanje: 62, description: "Lorem ipsum",  title: "Feng Shui", image: "../../assets/woman-prepares-for-workout.jpg", category: 'Joga', link: "feng-shui"},
+			{id: 12, tezina: 1, trajanje: 61, description: "Lorem ipsum",  title: "Moderna joga", image: "../../assets/landing.jpg", category: 'Joga', link: "moderna-joga"},
+			{id: 13, tezina: 3, trajanje: 63, description: "Lorem ipsum",  title: "Stop Joga", image: "../../assets/landing.png", category: 'Joga', link: "stop-joga"},
         ],
-        descriptions: [
+        descriptions: [ // Opis grupe treninga 
             {category: 'Pilates', description: "Lorem ipsum pilates" },
             {category: 'Core', description: "Lorem ipsum Core" },
             {category: 'Cardio', description: "Lorem ipsum Cardio" },
@@ -28,14 +30,233 @@ new Vue({
 	methods: {
 		setFilter: function(filter) {
 			this.currentFilter = filter;
-		}
+		},
+		sortByTezina: function() {
+			function compare(a, b) {
+				if (a.tezina < b.tezina)
+				  return -1;
+				if (a.tezina > b.tezina)
+				  return 1;
+				return 0;
+			  }
+			
+			this.projects.sort(compare)
+		},
+		sortByTrajanje: function() {
+			function compare(a, b) {
+				if (a.trajanje < b.trajanje)
+				  return -1;
+				if (a.trajanje > b.trajanje)
+				  return 1;
+				return 0;
+			  }
+			
+			this.projects.sort(compare)
+		},
+		sortByIme: function() {
+			function compare(a, b) {
+				if (a.title < b.title)
+				  return -1;
+				if (a.title > b.title)
+				  return 1;
+				return 0;
+			  }
+			
+			this.projects.sort(compare)
+		},
+		
+		resetFilter: function() {
+			function compare(a, b) {
+				if (a.id < b.id)
+				  return -1;
+				if (a.id > b.id)
+				  return 1;
+				return 0;
+			  }
+			
+			this.projects.sort(compare)
+		},
+		findByAttr: function(attr, search) {
+			for(let i = 0; i < this.projects.length; i++) {
+				if(this.projects[i][attr] == search )
+					return this.projects[i]
+			}
+			return null;
+		},
+
 	}
 })
 
+var trainingRatingsPage = new Vue({
+	el: '#searchedTraining',
+	data: {
+		name: "",
+		description: "",
+
+		comments: [
+			
+		],
+		videoLinks: [
+
+		],
+		photoGalleryLinks: [
+
+		]
+	},
+	methods: {
+		getAverageScore: function() {
+			let avg = 0
+			for(let i = 0; i < this.comments.length; i++) {
+				avg += this.comments[i]['score']
+			}
+			
+			return Math.round((avg/this.comments.length) * 100) / 100
+		},
+		appendComment: function(username, newRating, newComment) {
+			this.comments.push({
+				'user' : username,
+				'score' : newRating,
+				'comment' : newComment,
+			})
+		},
+		setComments:function(commentsList) {
+			this.comments = commentsList
+		},
+		setVideoLinks:function(videoLinks) {
+			this.videoLinks = videoLinks
+		},
+		setPhotoGalleryLinks:function(PhotoLinks) {
+			this.photoGalleryLinks = PhotoLinks
+		},
+		setName:function(name) {
+			this.name = name
+		},
+		setDescription: function(description) {
+			this.description = description
+		},
+
+	}
+})
+
+function checkIfUserAttended(trainingName) {
+	
+	let tempString = window.sessionStorage.getItem('userShowedUp')
+	if(tempString == null || tempString == '')
+		return
+	tempString = tempString.split(',')
+	for(let i = 0; i < tempString.length - 1; i++) {
+		if("list-"+trainingName ==tempString[i].split('_')[0]){
+			return true
+		}
+	}
+	
+	return false
+}
+checkIfUserAttended('ds')
+function submitComment(form) {
+	let queryString = window.location.search;
+	let urlParams = new URLSearchParams(queryString);
+	let trainingName = urlParams.get('type')
+	if(!checkIfUserAttended(trainingName)){
+		Swal.fire({
+			icon: 'error',
+			title: 'Ne mozete da komentarisere trening koji niste posetili!',
+		})
+		return
+	}
+	let username = form.username.value
+	let komentar = form.komentar.value
+	let ocena = eval(form.ocena.value)
+	
+	
+	let sessionStorageData = JSON.parse(window.sessionStorage.getItem('treninzi'))
+
+	let hardBreak = false
+	if(trainingName == null || trainingName == '') {
+		return
+	}
+	if(checkIfUserAttended(trainingName)) {
+		for(let i of Object.keys(sessionStorageData)) {
+			if(hardBreak)
+				break
+			for(let j = 0; j < sessionStorageData[i].length; j++) {
+				
+				if(sessionStorageData[i][j]['name'] == trainingName) {
+					let newComment = new Object();
+						newComment['user'] = username
+						newComment['score'] = ocena
+						newComment['comment'] = komentar
+					sessionStorageData[i][j]['data']['rejting'].push(newComment)
+					
+					window.sessionStorage.setItem('treninzi', JSON.stringify(sessionStorageData))
+
+					trainingRatingsPage.appendComment(username, ocena, komentar)
+
+
+					hardBreak = true
+					break
+				}
+			}	
+		}
+	} else {
+		Swal.fire({
+			icon: 'error',
+			title: 'Ne mozete da komentarisere trening koji niste posetili!',
+		})
+		return
+	}
+
+}
+function loadDataForTraining() {
+	let queryString = window.location.search;
+
+	let urlParams = new URLSearchParams(queryString);
+	
+	let trainingName = urlParams.get('type')
+	let localData = vueForTrainingSearch.findByAttr('link', trainingName)
+	let sessionStorageData = JSON.parse(window.sessionStorage.getItem('treninzi'))
+	let hardBreak = false
+	let ratingObject = null
+	for(let i of Object.keys(sessionStorageData)) {
+		if(hardBreak)
+			break
+		for(let j = 0; j < sessionStorageData[i].length; j++) {
+			
+			if(sessionStorageData[i][j]['name'] == trainingName) {
+				ratingObject = sessionStorageData[i][j]['data']['rejting']
+				break
+			}
+		}	
+	}
+
+	if(ratingObject == null)
+		return
+
+	trainingRatingsPage.setComments(ratingObject)
+	trainingRatingsPage.setName(localData['title'])
+	trainingRatingsPage.setDescription(localData['description'])
+	let average = trainingRatingsPage.getAverageScore()
+
+	let halfStar = false
+	if(average % 1 != 0) {
+		halfStar = true
+	}
+
+	let texter = ""
+	for(let i = 0; i <=average-1; i++) {
+		texter += '<i class="fas fa-star"></i>'
+	}
+	if(halfStar){
+		texter += '<i class="fas fa-star-half-alt"></i>'
+	}
+	$('#avgScore').html(texter+"/"+average)
+}	
+
 
 Date.prototype.addDays = function(days, time) {
-    var date = new Date(this.valueOf());
-	date.setDate(date.getDate() + days);
+	var date = new Date(this.valueOf());
+	if(days != 0)
+		date.setDate(date.getDate() + days);
 	let format = ""+date.getFullYear()+"-"+
 							( (date.getMonth()+1) < 10 ? "0"+(date.getMonth()+1) : (date.getMonth()+1))
 							+"-"+ (date.getDate() < 10 ? "0"+date.getDate() : date.getDate())+
@@ -65,7 +286,11 @@ var treninzi = {
 						],
 						"termini" : [
 							{
-								"datum" : new Date().addDays(0, "21:56"),
+								"datum" : new Date().addDays(6, "13:56"),
+								"zakazano" : 5
+							},
+							{
+								"datum" : "2020-04-26T22:50:00",
 								"zakazano" : 5
 							},
 							{
@@ -509,9 +734,12 @@ var treninzi = {
 		],
 }
 
-if (window.sessionStorage.getItem('treninzi') == null) {
+
+if(window.sessionStorage.getItem('treninzi') == null) {
 	window.sessionStorage.setItem('treninzi', JSON.stringify(treninzi))
 }
+
+
 
 function generateJSONDataFromParam(param) {
 	let jsonDataForParam = []
@@ -527,13 +755,14 @@ function generateJSONDataFromParam(param) {
 		// let tempoIntensity = tempObject['data']['tezina']
 
 		for (let j = 0; j < tempDates.length; j++) {
-
+			if(new Date().addDays(7, "00:00") < tempDates[j]['datum'])
+				continue
 			let date = tempDates[j]['datum']
 
 			let terminObject = new Object()
 					terminObject['dan'] = new Date(date).getDay()
 					terminObject['datetime'] = tempDates[j]['datum']
-
+					terminObject['date'] = tempDates[j]['datum'].split('T')[0]
 					terminObject['vreme'] = new Date(tempDates[j]['datum']).getHours() +":"+
 											(new Date(tempDates[j]['datum']).getMinutes() < 10 ? "0"+new Date(tempDates[j]['datum']).getMinutes() : new Date(tempDates[j]['datum']).getMinutes())
 					terminObject['preostaloMesta'] = tempObjectMaxPeople - tempDates[j]['zakazano']
@@ -583,8 +812,11 @@ function createVueElement() {
 
 	let combinedJSON = combineJSON(jogaJSON, coreJSON, pilatesJSON, cardioJSON)
 
-
-
+	if(trainingTableVue != null) {
+		delete trainingTableVue
+		trainingTableVue = null
+	}
+	
 	trainingTableVue = new Vue ({
 		el: '#trainingTableContainer',
 		data: {
@@ -599,7 +831,7 @@ function createVueElement() {
 			}
 		}
 	})
-
+	trainingTableVue.updateData(combinedJSON)
 	/** Ovo gore stavlja na default vrednosti pa ja dole menjam u cancel */
 
 	let userAppointments = window.sessionStorage.getItem('userAppointments')
@@ -703,24 +935,82 @@ function cancelAppointment(button) {
 }
 
 function disableButtonDependingOnTime() {
+	if(typeof trainingTableVue == 'undefined' || trainingTableVue == null)
+		return
 	let vueDataList = trainingTableVue.getData();
 	let now = new Date()
-	now.setMinutes(now.getMinutes() - 30)
+	let userAppointments = window.sessionStorage.getItem('userAppointments')
+	if(userAppointments != null)
+		userAppointments = userAppointments.split(',')
 	for(let i = 0; i < vueDataList.length; i++) {
 		let name = vueDataList[i]['name']
 		for(let j = 0; j < vueDataList[i]['termini'].length;j++) {
 			let terminDateTime = new Date(vueDataList[i]['termini'][j]['datetime'])
+			let terminDateTimeTemp = new Date(vueDataList[i]['termini'][j]['datetime'])
+			terminDateTime.setMinutes(terminDateTime.getMinutes() - 30)
+			let fullname = name+"_"+j
+			let zakazao = false
+			if(userAppointments != null) {
+				for(let k = 0; k < userAppointments.length; k++) {
+					if (fullname == userAppointments[k])
+					zakazao = true
+				}
+			}
+			// Ako je zakazao i ako je manje od trideset 
+			// ILI ako je pocelo
 			
-			if(terminDateTime < now ) {
-				$('#'+name+"_"+j).attr('disabled', true)
+			if(((terminDateTime < now) && zakazao) || 
+				 ((terminDateTimeTemp <= now) && !zakazao)) {
+				$('#'+fullname).attr('disabled', true)
 			}
 		}
 	}
 
+
+
+
 }
 
-setInterval(disableButtonDependingOnTime(), 10000)
+setInterval(disableButtonDependingOnTime, 10000)
+setInterval(checkUserArrival, 10000)
+/**
+ * Ako sto puta dodje, sto puta ce biti dodat
+ */
+function checkUserArrival() {
+	
+	let userAppointments = window.sessionStorage.getItem('userAppointments')
+	if(userAppointments == null)
+		return
+	userAppointments =userAppointments.split(',')
+	let sessionStorageData = JSON.parse(window.sessionStorage.getItem('treninzi'))
+	let newUserApp = ""
+	for(let i of Object.keys(sessionStorageData)) {
+		for(let j = 0; j < sessionStorageData[i].length; j++) {
+			for(let t = 0; t < userAppointments.length - 1; t++) {
+				if('list-'+sessionStorageData[i][j]['name'] == userAppointments[t].split('_')[0]) {
+					let temp = sessionStorageData[i][j]['data']['termini'][userAppointments[t].split('_')[1]]['datum']
+					if(new Date() >= new Date(temp)) {
+						let tempString = window.sessionStorage.getItem('userShowedUp')
+						if(tempString == null)
+							tempString = userAppointments[t] + ","
+						else
+							tempString += userAppointments[t] + ","
 
+						
+						window.sessionStorage.setItem('userShowedUp', tempString)
+
+					} else {
+						newUserApp += userAppointments[t]+","
+					}
+				}
+			}
+			
+		}
+	}
+	console.log(newUserApp)
+	window.sessionStorage.setItem('userAppointments', newUserApp)
+
+}
 function userMakeTrainingAppointment(button) {
 	let buttonId = $(button).attr('id').split('_')
 	let sessionUser = window.sessionStorage.getItem('userAppointments')
@@ -800,7 +1090,7 @@ function userMakeTrainingAppointment(button) {
 		}
 	}
 
-
+	disableButtonDependingOnTime()
 }
 
 function nutritionistAppointment(param) {
@@ -911,8 +1201,9 @@ function loadAppointments() {
 
 	let sessionAppointment = window.sessionStorage.getItem('userAppointments')
 	let sessionStorageData = JSON.parse(window.sessionStorage.getItem('treninzi'))
-	let userHasAppointments = sessionAppointment != null
+	let userHasAppointments = (sessionAppointment != null && sessionAppointment != '')
 	let necessaryData = []
+	let buttonDisableListId = []
 	if(userHasAppointments)
 	{	
 		sessionAppointment = sessionAppointment.split(',')
@@ -929,13 +1220,22 @@ function loadAppointments() {
 							for(let t = 0; t < tempName.length; t++) {
 								name += tempName[t]+" "
 							}
+							
 							myObject['id'] = sessionAppointment[z]
 							myObject['name'] =name
+							myObject['datum'] = appointment.split('T')[0]
 							myObject['dan'] = getDay(new Date(appointment).getDay())
 							myObject['vreme'] = (new Date(appointment).getHours() < 10 ? "0"+new Date(appointment).getHours() : new Date(appointment).getHours())
 										  + ":"+
 										  (new Date(appointment).getMinutes() < 10 ? "0"+new Date(appointment).getMinutes() : new Date(appointment).getMinutes())
-						
+							
+							let tempDate = myObject['datum']+"T"+myObject['vreme']+":00"
+							tempDate = new Date(tempDate)
+							tempDate.setMinutes(tempDate.getMinutes() - 30)
+
+
+							if(tempDate < new Date)
+								buttonDisableListId.push(sessionAppointment[z])
 							necessaryData.push(myObject)
 					}
 				}
@@ -963,6 +1263,9 @@ function loadAppointments() {
 		
 	})
 
+	for(let i = 0; i < buttonDisableListId.length; i++)
+		$('#'+buttonDisableListId[i]).attr('disabled', true)
+	
 }
 function cancelTrainingFromMyAcc(button) {
 
@@ -970,8 +1273,8 @@ function cancelTrainingFromMyAcc(button) {
 	if(sessionData == null) {
 		return
 	}
-	sessionData = sessionData.replace($(button).attr('id')+',')
-	//window.sessionStorage.setItem('userAppointments', sessionData)
+	sessionData = sessionData.replace($(button).attr('id')+',', '')
+	window.sessionStorage.setItem('userAppointments', sessionData)
 	let items = myAccountVue.getData()
 	var filtered = items.filter(function(item) { 
 		return item.id != $(button).attr('id');  
@@ -980,11 +1283,108 @@ function cancelTrainingFromMyAcc(button) {
 		 filtered = new Object()
 	 }
 	 myAccountVue.setData(filtered)
+
+	 let sessionStorageData = JSON.parse(window.sessionStorage.getItem('treninzi'))
+	 let hardBreak = false
+	 for(let i of Object.keys(sessionStorageData)) {
+		 if(hardBreak)
+		 	break
+		for(let j = 0; j < sessionStorageData[i].length; j++) {
+			
+			if("list-"+sessionStorageData[i][j]['name'] == $(button).attr('id').split('_')[0]) {
+				
+				
+				sessionStorageData[i][j]['data']['termini'][$(button).attr('id').split('_')[1]]['zakazano']--
+				
+				window.sessionStorage.setItem('treninzi', JSON.stringify(sessionStorageData))
+				hardBreak = true;
+				break
+			}
+		}
+	}
+
+	let s = window.sessionStorage.getItem('userAppointments')
+	console.log(s)
 }
-/**
- * TODO: Treba napraviti otkazivanje
- * Granicni slucajevi:
- * 	1) Prosao je vremenski termin - ne moze da se zakaze - treba staviti disable na dugme
- * 	2) Moze otkazivanje 30 minuta pre pocetka - disable na dugme
- * 	3) 
- */
+
+function getAverageFromObjectList(objList, attributename) {
+	let avg = 0
+	for(let i = 0; i < objList.length; i++) {
+		avg += objList[i][attributename]
+	}
+
+	return avg/objList.length
+	
+}
+
+function getTopThree() {
+	let sessionStorageData = JSON.parse(window.sessionStorage.getItem('treninzi'))
+	let trainingList = []
+	for(let i of Object.keys(sessionStorageData)) { // Iteriraj kroz sve grupe
+		for(let j = 0; j < sessionStorageData[i].length; j++) { // Iteriraj kroz sve treninge
+			
+			let nameOfTraining = sessionStorageData[i][j]['name']
+			let trainingData = sessionStorageData[i][j]['data']
+			let averageOfTraining = getAverageFromObjectList(trainingData['rejting'], 'score')
+			let numberOfComments = trainingData['rejting'].length
+			let description = vueForTrainingSearch.findByAttr('link', nameOfTraining)['description']
+			let nameList = nameOfTraining.split('-')
+			let result = ''
+			for(let i = 0; i < nameList.length; i++) {
+				let temp = nameList[i]
+			  	let res = temp.substr(0,1).toUpperCase() + temp.substr(1, temp.length)
+				  result +=  res +" "
+			  
+			}
+
+			let halfStar = false
+			if(averageOfTraining % 1 != 0) {
+				halfStar = true
+			}
+
+			let texter = ""
+			for(let i = 0; i <=averageOfTraining-1; i++) {
+				texter += '<i class="fas fa-star"></i>'
+			}
+			if(halfStar){
+				texter += '<i class="fas fa-star-half-alt"></i>'
+			}
+
+			trainingList.push({
+				'name' : result,
+				'link' : nameOfTraining,
+				'trainingAvgScore' : Math.round(averageOfTraining * 100)/100,
+				'numberOfComments' : numberOfComments,
+				'description' : description,
+				'starTextByAverage' : texter
+			})
+
+		}	
+	}
+
+	
+	trainingList.sort((a,b)=> b['trainingAvgScore'] - a['trainingAvgScore'])
+
+	return [trainingList[0], trainingList[1], trainingList[2]]
+}
+
+var indexVueComponent = new Vue({
+	el: '#ponuda',
+	data:{
+		elements: [
+
+		]
+	},
+	methods:{
+		populateElements(elementList) {
+			this.elements = elementList
+		}
+	}
+})
+function loadIndexPage() {
+	let bestRatedTrainings = getTopThree()
+
+	indexVueComponent.populateElements(bestRatedTrainings)
+
+
+}
