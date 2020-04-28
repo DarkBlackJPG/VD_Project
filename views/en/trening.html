@@ -9,14 +9,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     
     <link href="../../css/main.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/662634c78e.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="loadDataForTraining()" >
     
-    <div class="container-fluid p-0 comfortaa"> <div class="row fixed-top">
+    <div class="container-fluid p-0 comfortaa" id="searchedTraining"> <div class="row fixed-top">
             
         <div class="col-12 comfortaa">
             
@@ -78,68 +79,103 @@
     </div>
     </div>
         <div class="jumbotron-fluid vertical-center jumbotron-picture" style="height: 60vh;">
+            
            <div class="container-fluid m-0 p-0 text-center text-white">
                <div class="semi-transparent-bg p-4" style="width:auto">
-                    <h1 style="font-size: 4.5em; "> Treninzi koje pružamo </h1>
+                    <h1 style="font-size: 4.5em; " > {{name}} </h1>
+                    <h4 id="avgScore" class="text-danger"></h4>
+                    <h5>{{comments.length}} Recenzije</h5>
                </div>
            </div>
         </div>
-        <div class="row p-4 m-0 justify-content-center bg-black border-info border-top border-bottom">
-            <div class="row"><h1 class="bungee">Smatramo da je u zdravom telu zdrav čips </h1></div>
-            <div class="row justify-content-center"><p class="col-12  col-lg-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloribus molestiae perspiciatis ipsa esse dolor nesciunt pariatur! Ullam sint iusto repellendus itaque aliquid nulla vero numquam, eos placeat, cumque ab?</p>
+        <div class="row p-0 m-0 bg-black justify-content-center p-3 border-top border-bottom border-info" >
+            <div class="col-12 text-center bungee">
+                <h1>Opis</h1>
             </div>
-            
+            <div class="col-12 p-1 text-center"  >
+                <p>{{description}}</p>
             </div>
-        
-        <div class="row p-0 m-0 bg-black justify-content-center p-3 " id="treninzi">
-            
-            <div class="row col-12 text-center justify-content-center">
-                <h1 class="bungee">
-                Tipovi treninga koje pružamo
-                </h1>
-            </div>
-            
-            <div class="row col-12 text-center justify-content-center mb-4">
-                <div class="filters">
-                    <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Svi' }" v-on:click="setFilter('Svi')">Svi</span>
-                    <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Cardio' }" v-on:click="setFilter('Cardio')">Cardio</span>
-                    <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Joga' }" v-on:click="setFilter('Joga')">Joga</span>
-                    <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Pilates' }" v-on:click="setFilter('Pilates')">Pilates</span>
-                    <span class="filter border-bottom border-danger"  v-bind:class="{ active: currentFilter === 'Core' }" v-on:click="setFilter('Core')">Core</span>
-                    <br>
-                    <span class="border-bottom border-danger mr-4" v-on:click="sortByTezina()">
-                        <span v-if="language">Sortiranje po tezini</span>
-                        <span v-else>Sort by Difficulty</span>
-                    </span>
-                    <span class="border-bottom border-danger mr-4" v-on:click="sortByIme()">Sortiranje po imenu</span>
-                    <span class="border-bottom border-danger mr-4" v-on:click="sortByTrajanje()">Sortiranje po trajanju</span>
-                    <span class="border-bottom border-danger mr-4" v-on:click="resetFilter()">Resetuj filtre</span>
-                </div>
-            </div>
-            <div v-if="currentFilter !== 'Svi' && currentFilter === description.category" v-for="description in descriptions" class="mb-3">
-                <h5 class="bungee">{{description.description}}</h5>
-            </div>
-            <transition-group class="row  justify-content-center"  name="projects">
-                
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3" v-if="currentFilter === project.category || currentFilter === 'Svi'" v-bind:key="project.title" v-for="project in projects">
-                    <div class="card col-12 bg-light-black border-secondary rounded-0 border mb-3 p-0">
-                        <img class="card-img-top img-fluid p-0 m-0" width="100%" v-bind:src="project.image">
-                        <div class="card-body text-center">
-                            <a v-bind:href="'trening.html?type='+project.link" class="filter-link bungee" v-if="language"><h4>{{project.title}}</h4></a>
-                            <a v-bind:href="'trening.html?type='+project.link" class="filter-link bungee" v-else><h4>{{project.title_en}}</h4></a>
-                            <p v-if="language"> Trajanje: {{project.trajanje}}</p>
-                            <p v-else> Duration: {{project.trajanje}}</p>
-                            <p v-if="language"> Tezina: {{project.tezina}}</p>
-                            <p v-else>Difficulty: {{project.tezina}}</p>
-                        </div>
-                        
-                      </div>
-                </div>
-            </transition-group>
-
 
         </div>
+        <div class="row p-0 m-0 bg-black justify-content-center p-3 border-top border-bottom border-info" >
+            <div class="col-12 text-center bungee">
+                <h1>Slike</h1>
+            </div>
+            <div class="col-4 p-2"  v-for="picture in photoGalleryLinks">
+                
+            </div>
 
+        </div>
+        <div class="row p-0 m-0 bg-black justify-content-center p-3 border-top border-bottom border-info" >
+            <div class="col-12 text-center bungee">
+                <h1>Videi</h1>
+            </div>
+            <div class="col-4 p-2"  v-for="video in videoLinks">
+                nema video
+            </div>
+
+        </div>
+        <div class="row p-0 m-0 bg-black justify-content-center p-3 border-top border-bottom border-info" >
+           
+            <div class="col-12 text-center bungee">
+                <h1>Komentari</h1>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4 p-2"  v-for="comment in comments">
+                <div class="card bg-dark">
+                    <div class="card-header">
+                        {{comment.user}}
+                    </div>
+                    <div class="card-body">
+                        
+                        Rejting: {{comment.score}}<br>
+                        Komentar: {{comment.comment}}<br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="row p-0 m-0 bg-black justify-content-center p-3 border-top border-bottom border-info" >
+            <div class="col-12 text-center bungee">
+                <h1>Ostavi komentar</h1>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-2" >
+                <form action="" class="form" name="commentForm" onsubmit="return false">
+                    <div class="form-group row">
+                        <label for="username" class="col-12 col-form-label">Username</label>
+                        <div class="col-12 ">
+                            <input type="text"class="form-control" name="username" id="username" required/>
+                        </div>
+                       
+                    </div>
+                    <div class="form-group row">
+                        <label for="ocena" class="col-12 col-form-label">Ocena</label>
+                        <div class="col-12 ">
+                            <input type="number" max="5" min="1" class="form-control" name="ocena" id="ocena" value="5" required/>
+                        </div>
+                       
+                    </div>
+                    <div class="form-group row">
+                        <label for="komentar" class="col-12 col-form-label">Rejting</label>
+                        <div class="col-12 ">
+                            <textarea class="form-control" name="komentar" id="komentar" required>
+                            
+                                
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        
+                        <div class="col-12 ">
+                            <button class="btn btn-primary" type="submit" onclick="submitComment(commentForm)">Posalji</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        
         <footer class="page-footer comfortaa text-light font-small blue pt-4 bg-dark border-top">
             <div class="container-fluid">
                 <div class="row m-0">

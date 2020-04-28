@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treninzi</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link href="../../css/main.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/662634c78e.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="createVueElement()">
+
+    <div class="container-fluid p-0 comfortaa"> <div class="row fixed-top">
+
+        <div class="col-12 comfortaa">
+
+            <nav class="navbar  navbar-expand-lg navbar-dark bg-black">
+                <a class="navbar-brand bungee" href="index.html"><img src="../../assets/logo.png" width="50px"/>&nbsp;AlwaysStop Fitness</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Početna</a>
+                          </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Jezik
+                            </a>
+                            <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item bg-dark-hover text-white" href="index.html">Srpski</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="../en/index.html">English</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Usluge
+                            </a>
+                            <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item bg-dark-hover text-white" href="treninzi.html">Treninzi</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="nutricionista.html">Nutricionista</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="masaze.html">Masaze</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Zakazivanje termina
+                            </a>
+                            <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown3">
+                                <a class="dropdown-item bg-dark-hover text-danger" href="zakazivanje_trening.html">Zakazivanje treninga</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_nutri.html">Zakazivanje nutricioniste</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_masaza.html">Zakazivanje masaze</a>
+                            </div>
+                        </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="moj_nalog.html">Moj nalog</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="o_nama.html">O nama</a>
+                      </li>
+
+                    </ul>
+                </div>
+
+            </nav>
+        <div class="row pl-4 text-white bg-breadcrum">
+            <a href="../../index.html" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Main</a>
+            <a href="treninzi.html" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Treninzi</a>
+            <a href="#" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Zakazivanje treninga</a>
+      </div>
+    </div>
+    </div>
+        <div class="jumbotron-fluid vertical-center jumbotron-picture" style="height: 60vh;">
+           <div class="container-fluid m-0 p-0 text-center text-white">
+               <div class="semi-transparent-bg p-4" style="width:auto">
+                    <h1 style="font-size: 4.5em; "> Zakazite trening </h1>
+               </div>
+           </div>
+        </div>
+        <div class="row p-4 m-0 justify-content-center bg-black border-info border-top border-bottom">
+            <div class="col-12 col-sm-6 justify-content-center">
+                <h1 class="bungee">
+                    Izaberite tip treninga
+                </h1>
+                <div class="list-group border rounded border-dark" id="list-tab" role="tablist">
+                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action active" id="list-joga-list" data-toggle="list" href="#list-joga" role="tab" aria-controls="joga">Joga</a>
+                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-cardio-list" data-toggle="list" href="#list-cardio" role="tab" aria-controls="cardio">Cardio</a>
+                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-pilates-list" data-toggle="list" href="#list-pilates" role="tab" aria-controls="pilates">Pilates</a>
+                    <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-core-list" data-toggle="list" href="#list-core" role="tab" aria-controls="core">Core</a>
+                  </div>
+
+            </div>
+            <div class="col-12 col-sm-6 justify-content-center">
+                <h1 class="bungee">
+                    Izaberite trening
+                </h1>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade active show" id="list-joga" role="tabpanel" aria-labelledby="list-joga-list">
+                        <div class="list-group border rounded border-dark" id="list-tab" role="tablist">
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action " id="list-feng-sui-link" data-toggle="list" href="#list-feng-shui" role="tab" aria-controls="feng-shui">Feng sui</a>
+                        <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-moderna-joga-link" data-toggle="list" href="#list-moderna-joga" role="tab" aria-controls="moderna-joga">Moderna joga</a>
+                        <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-stop-joga-link" data-toggle="list" href="#list-stop-joga" role="tab" aria-controls="stop-joga">Stop joga</a>
+                   </div>
+                        </div>
+                    <div class="tab-pane fade" id="list-pilates" role="tabpanel" aria-labelledby="list-pilates-list">
+                        <div class="list-group border rounded border-dark" id="list-tab" role="tablist">
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-stop-pilates-link" data-toggle="list" href="#list-stop-pilates" role="tab" aria-controls="stop-pilates">Stop pilates</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-reformer-pilates-link" data-toggle="list" href="#list-reformer-pilates" role="tab" aria-controls="reformer-pilates">Reformer pilates</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-klasicni-pilates-link" data-toggle="list" href="#list-klasicni-pilates" role="tab" aria-controls="klasicni-pilates">Klasicni pilates</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-core" role="tabpanel" aria-labelledby="list-core-list">
+                        <div class="list-group border rounded border-dark" id="list-tab" role="tablist">
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action " id="list-trbusnjaci-link" data-toggle="list" href="#list-trbusnjaci" role="tab" aria-controls="trbusnjaci">Trbusnjaci</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-trening-izdrzljivosti-link" data-toggle="list" href="#list-trening-izdrzljivosti" role="tab" aria-controls="trening-izdrzljivosti">Trening izdrzljivosti</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-core-box-link" data-toggle="list" href="#list-core-box" role="tab" aria-controls="core-box">Core box</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-sklekovi-link" data-toggle="list" href="#list-sklekovi" role="tab" aria-controls="sklekovi">Sklekovi</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-cardio" role="tabpanel" aria-labelledby="list-cardio-list">
+                        <div class="list-group border rounded border-dark" id="list-tab" role="tablist">
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action " id="list-hiit-link" data-toggle="list" href="#list-hiit" role="tab" aria-controls="hiit">HIIT</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-trcanje-link" data-toggle="list" href="#list-trcanje" role="tab" aria-controls="trcanje">Trcanje</a>
+                            <a class="list-group-item bg-black border-bottom border-dark list-group-item-action" id="list-stepenice-link" data-toggle="list" href="#list-stepenice" role="tab" aria-controls="stepenice">Stepenice</a>
+                        </div>
+                    </div>
+
+                  </div>
+            </div>
+        </div>
+        <div class="row p-4 m-0 justify-content-center bg-black border-info border-top border-bottom">
+            <div class="col-12 text-center">
+                <h1 class="bungee">
+                    Slobodni termini
+                </h1>
+            </div>
+
+            <div class="tab-content col-12" id="trainingTableContainer" >
+                <div class="tab-pane fade col-12" v-for="training in trainings " v-bind:id="training.name" role="tabpanel" aria-labelledby="list-stop-pilates-list">
+                    <div class="list-group  rounded border-dark table-responsive-xl" id="list-stop-pilates-data" role="tablist">
+
+                        <table class="table table-dark table-bordered table-hover text-white table-striped" id="trainingTable">
+                            <thead>
+                                <tr>
+                                    <td>Ponedeljak</td>
+                                    <td>Utorak</td>
+                                    <td>Sreda</td>
+                                    <td>Cetvrtak</td>
+                                    <td>Petak</td>
+                                    <td>Subota</td>
+                                    <td>Nedelja</td>
+                                </tr>
+                            </thead>
+                            <tr>
+
+                                <td class="p-0">
+                                  <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 1">
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
+                                    Preostalo mesta: {{termin.preostaloMesta}} <br>
+                                    <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index" >Zakazi</button>
+                                  </div>
+
+                                </td>
+                                <td class="p-0">
+                                  <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 2">
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
+                                    Preostalo mesta: {{termin.preostaloMesta}} <br>
+                                    <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index">Zakazi</button>
+                                  </div>
+                                </td>
+                                <td class="p-0">
+                                  <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 3">
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
+                                    Preostalo mesta: {{termin.preostaloMesta}} <br>
+                                    <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)" v-bind:id="training.name+'_'+index">Zakazi</button>
+                                  </div>
+                                </td>
+                                <td class="p-0">
+                                  <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 4">
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
+                                    Preostalo mesta: {{termin.preostaloMesta}} <br>
+                                    <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index">Zakazi</button>
+                                  </div>
+                                </td>
+                                <td class="p-0">
+                                  <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 5">
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
+                                    Preostalo mesta: {{termin.preostaloMesta}} <br>
+                                    <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index">Zakazi</button>
+                                  </div>
+                                </td>
+                                <td class="p-0">
+                                  <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 6">
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
+                                    Preostalo mesta: {{termin.preostaloMesta}} <br>
+                                    <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index">Zakazi</button>
+                                  </div>
+                                </td>
+                                <td class="p-0">
+                                  <div class="row m-0 pt-2 pb-2 mb-2 col-12 border-bottom" v-for="(termin, index) in training.termini"  v-if="termin.dan == 0">
+                                    Vreme: {{termin.vreme}}h <br>
+                                    Datum: {{termin.date}} <br>
+                                    Preostalo mesta: {{termin.preostaloMesta}} <br>
+                                    <button class="btn btn-danger ml-2" onclick="userMakeTrainingAppointment(this)"v-bind:id="training.name+'_'+index">Zakazi</button>
+                                  </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                </div>
+
+        </div>
+
+        <footer class="page-footer comfortaa text-light font-small blue pt-4 bg-dark border-top">
+            <div class="container-fluid">
+                <div class="row m-0">
+                    <div class="col-12  col-md-4 ">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h4 style="font-weight: normal;">AlwaysStop Fitness</h4>
+                            </div>
+                        </div>
+                        <hr >
+                        <div class="row offset-3">
+                            <i class="fas fa-location-arrow"></i> &nbsp;Banovo brdo
+                        </div>
+                        <div class="row offset-3">
+                            <i class="fas fa-envelope"></i> &nbsp;administration@alwaysstopfitness.rs
+                        </div>
+                        <div class="row offset-3">
+                            <i class="fas fa-globe"></i> &nbsp;alwaysstopfitness.rs
+                        </div>
+                        <br>
+                        <div class="row offset-3">
+                            <p>
+                                Delatnost: Delatnost fitnes klubova <br>
+
+                                Šifra delatnosti: 9313<br>
+
+                                PIB: 108988929<br>
+
+                                Matični broj: 21106364<br>
+
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12  p-1 col-md-4">
+                        <div class="row p-0">
+                            <div class="col-12 text-center">
+                                <h4 style="font-weight: normal;">AlwaysStop Fitness lokacije</h4>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row offset-3">
+                            <p>
+
+
+                                Autokomanda  +381 62 570 434 <br>
+
+                                Dimitrijala   +381 11 403 95 36<br>
+
+                                Big Fashion Park   +381 11 4022 488<br>
+
+                                Aviv Park   +381 11 630 43 02<br>
+
+                                Novi Sad   +381 21 32 70 200<br>
+
+                                Banovo Brdo   +381 11 454 12 62<br>
+
+                                Obrenovac   +381 63 436 291<br>
+
+                                Vojislava Ilića   +381 11 454 30 14<br>
+
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-1 col-md-4 text-center">
+                        <div class="row p-0">
+                            <div class="col-12 text-center">
+                                <h4 style="font-weight: normal;">Korisni linkovi</h4>
+                            </div>
+                        </div>
+                        <hr>
+                        <p>
+                            Cene<br>
+                            Lokacije<br>
+                            Grupni trening<br>
+                            Personalni trener<br>
+                            Ženska zona<br>
+                            Masaža<br>
+                            Online plaćanje<br>
+                            Za firme<br>
+                            Dešavanja<br>
+                            Blog<br>
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="row bg-dark text-white">
+                    <div class="col-12 p-4 text-center">
+                        <h6><i>Copyright 2020, Luka Špehar, Stefan Teslić, odsek za Softversko inženjerstvo Elektrotehničkog fakulteta, univerzitet u Beogradu</i></h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

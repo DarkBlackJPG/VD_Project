@@ -1,29 +1,30 @@
-
+var languageType = false // 0 - SR, 1 - EN
 
 
 var vueForTrainingSearch = new Vue({
 	el: '#treninzi',
 	data: {
-		currentFilter: 'Svi',
+		language: true,
+		currentFilter: 'Svi',								
 		projects: [								// Opis pojedinacnih treninga
-			{id: 1,  tezina: 3, trajanje: 60, description: "Lorem ipsum", title: "Stop Pilates", image: "../../assets/trening2.png", category: 'Pilates', link: "stop-pilates"},
-			{id: 2,  tezina: 4, trajanje: 45, description: "Lorem ipsum", title: "Reformer Pilates", image: "../../assets/trening3.png", category: 'Pilates', link: "reformer-pilates"},
-			{id: 3,  tezina: 2, trajanje: 60, description: "Lorem ipsum", title: "Klasicni pilates", image: "../../assets/trening3.png", category: 'Pilates', link: "klasicni-pilates"},
-			{id: 4,  tezina: 1, trajanje: 45, description: "Lorem ipsum", title: "Trbusnjaci", image: "../../assets/trening4.png", category: 'Core', link: "trbusnjaci"},
-			{id: 5,  tezina: 5, trajanje: 60, description: "Lorem ipsum", title: "Trening izdrzljivosti", image: "../../assets/trening5.png", category: 'Core', link: "trening-izdrzljivosti"},
-			{id: 6,  tezina: 5, trajanje: 45, description: "Lorem ipsum", title: "Core Box", image: "../../assets/core-strength-fitness.jpg", category: 'Core', link: "core-box"},
-			{id: 7,  tezina: 4, trajanje: 60, description: "Lorem ipsum", title: "Sklekovi", image: "../../assets/Working-Out-With-Chalk.jpg", category: 'Core', link: "sklekovi"},
-			{id: 8,  tezina: 3, trajanje: 55, description: "Lorem ipsum", title: "HIIT", image: "../../assets/a-man-grabs-a-metallic-handle-hanging-from-the-ceiling.jpg", category: 'Cardio', link: "hiit"},
-			{id: 9,  tezina: 2, trajanje: 74, description: "Lorem ipsum", title: "Trcanje", image: "../../assets/exercise-free-weights.jpg", category: 'Cardio', link: "trcanje"},
-			{id: 10, tezina: 3, trajanje: 66, description: "Lorem ipsum",  title: "Stepenice", image: "../../assets/training1.png", category: 'Cardio', link: "stepenice"},
-			{id: 11, tezina: 3, trajanje: 62, description: "Lorem ipsum",  title: "Feng Shui", image: "../../assets/woman-prepares-for-workout.jpg", category: 'Joga', link: "feng-shui"},
-			{id: 12, tezina: 1, trajanje: 61, description: "Lorem ipsum",  title: "Moderna joga", image: "../../assets/landing.jpg", category: 'Joga', link: "moderna-joga"},
-			{id: 13, tezina: 3, trajanje: 63, description: "Lorem ipsum",  title: "Stop Joga", image: "../../assets/landing.png", category: 'Joga', link: "stop-joga"},
+			{id: 1,  tezina: 3, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Stop Pilates", title_en: "Stop Pilates2", image: "../../assets/trening2.png", category: 'Pilates', link: "stop-pilates"},
+			{id: 2,  tezina: 4, trajanje: 45, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Reformer Pilates",title_en: "Stop Pilates2", image: "../../assets/trening3.png", category: 'Pilates', link: "reformer-pilates"},
+			{id: 3,  tezina: 2, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Klasicni pilates",title_en: "Stop Pilates2", image: "../../assets/trening3.png", category: 'Pilates', link: "klasicni-pilates"},
+			{id: 4,  tezina: 1, trajanje: 45, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Trbusnjaci",title_en: "Stop Pilates2", image: "../../assets/trening4.png", category: 'Core', link: "trbusnjaci"},
+			{id: 5,  tezina: 5, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Trening izdrzljivosti",title_en: "Stop Pilates2", image: "../../assets/trening5.png", category: 'Core', link: "trening-izdrzljivosti"},
+			{id: 6,  tezina: 5, trajanje: 45, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Core Box",title_en: "Stop Pilates2", image: "../../assets/core-strength-fitness.jpg", category: 'Core', link: "core-box"},
+			{id: 7,  tezina: 4, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Sklekovi",title_en: "Stop Pilates2", image: "../../assets/Working-Out-With-Chalk.jpg", category: 'Core', link: "sklekovi"},
+			{id: 8,  tezina: 3, trajanje: 55, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "HIIT",title_en: "Stop Pilates2", image: "../../assets/a-man-grabs-a-metallic-handle-hanging-from-the-ceiling.jpg", category: 'Cardio', link: "hiit"},
+			{id: 9,  tezina: 2, trajanje: 74, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Trcanje",title_en: "Stop Pilates2", image: "../../assets/exercise-free-weights.jpg", category: 'Cardio', link: "trcanje"},
+			{id: 10, tezina: 3, trajanje: 66, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Stepenice",title_en: "Stop Pilates2", image: "../../assets/training1.png", category: 'Cardio', link: "stepenice"},
+			{id: 11, tezina: 3, trajanje: 62, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Feng Shui",title_en: "Stop Pilates2", image: "../../assets/woman-prepares-for-workout.jpg", category: 'Joga', link: "feng-shui"},
+			{id: 12, tezina: 1, trajanje: 61, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Moderna joga",title_en: "Stop Pilates2", image: "../../assets/landing.jpg", category: 'Joga', link: "moderna-joga"},
+			{id: 13, tezina: 3, trajanje: 63, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Stop Joga",title_en: "Stop Pilates2", image: "../../assets/landing.png", category: 'Joga', link: "stop-joga"},
         ],
         descriptions: [ // Opis grupe treninga 
             {category: 'Pilates', description: "Lorem ipsum pilates" },
             {category: 'Core', description: "Lorem ipsum Core" },
-            {category: 'Cardio', description: "Lorem ipsum Cardio" },
+            {category: 'Cardio', description: "Spehar ipsum Cardio" },
             {category: 'Joga', description: "Lorem ipsum Joga" },
         ]
 	},
@@ -41,6 +42,9 @@ var vueForTrainingSearch = new Vue({
 			  }
 			
 			this.projects.sort(compare)
+		},
+		setLanguageType: function(param) {
+			this.language = param
 		},
 		sortByTrajanje: function() {
 			function compare(a, b) {
@@ -86,6 +90,8 @@ var vueForTrainingSearch = new Vue({
 
 	}
 })
+vueForTrainingSearch.setLanguageType(languageType)
+
 
 var trainingRatingsPage = new Vue({
 	el: '#searchedTraining',
@@ -152,7 +158,6 @@ function checkIfUserAttended(trainingName) {
 	
 	return false
 }
-checkIfUserAttended('ds')
 function submitComment(form) {
 	let queryString = window.location.search;
 	let urlParams = new URLSearchParams(queryString);
@@ -739,8 +744,6 @@ if(window.sessionStorage.getItem('treninzi') == null) {
 	window.sessionStorage.setItem('treninzi', JSON.stringify(treninzi))
 }
 
-
-
 function generateJSONDataFromParam(param) {
 	let jsonDataForParam = []
 
@@ -755,7 +758,12 @@ function generateJSONDataFromParam(param) {
 		// let tempoIntensity = tempObject['data']['tezina']
 
 		for (let j = 0; j < tempDates.length; j++) {
-			if(new Date().addDays(7, "00:00") < tempDates[j]['datum'])
+			if(new Date().addDays(7, "00:00") < new Date(tempDates[j]['datum']))
+				continue
+			let dateBorder = new Date();
+			dateBorder.setHours(dateBorder.getHours() - 24) // Get 1 day before
+
+			if(dateBorder > new Date(tempDates[j]['datum']) )
 				continue
 			let date = tempDates[j]['datum']
 
@@ -766,7 +774,7 @@ function generateJSONDataFromParam(param) {
 					terminObject['vreme'] = new Date(tempDates[j]['datum']).getHours() +":"+
 											(new Date(tempDates[j]['datum']).getMinutes() < 10 ? "0"+new Date(tempDates[j]['datum']).getMinutes() : new Date(tempDates[j]['datum']).getMinutes())
 					terminObject['preostaloMesta'] = tempObjectMaxPeople - tempDates[j]['zakazano']
-
+			
 			jsonObjectTermini.push(terminObject)
 		}
 
