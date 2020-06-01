@@ -1,4 +1,4 @@
-var languageType = false // 0 - SR, 1 - EN
+var languageType = true // true - sr, false -en
 
 
 var vueForTrainingSearch = new Vue({
@@ -148,7 +148,7 @@ function checkIfUserAttended(trainingName) {
 	
 	let tempString = window.sessionStorage.getItem('userShowedUp')
 	if(tempString == null || tempString == '')
-		return
+		return false
 	tempString = tempString.split(',')
 	for(let i = 0; i < tempString.length - 1; i++) {
 		if("list-"+trainingName ==tempString[i].split('_')[0]){
@@ -287,6 +287,11 @@ var treninzi = {
 								"score" : 5,
 								"comment" : "Bas je mnogo kul"
 							},
+							{
+								"user" : "Marko2",
+								"score" : 5,
+								"comment" : "Bas je mnogo kul"
+							},
 
 						],
 						"termini" : [
@@ -299,7 +304,11 @@ var treninzi = {
 								"zakazano" : 5
 							},
 							{
-								"datum" : new Date().addDays(4, "13:00"),
+								"datum" : new Date().addDays(3, "13:00"),
+								"zakazano" : 7
+							},
+							{
+								"datum" : moment(new Date()).add(31, 'm').toDate(),
 								"zakazano" : 7
 							},
 							{
@@ -574,6 +583,11 @@ var treninzi = {
 							"score" : 5,
 							"comment" : "Bas je mnogo kul"
 						},
+						{
+							"user" : "Marko3",
+							"score" : 5,
+							"comment" : "Bas je mnogo kul"
+						},
 
 					],
 					"termini" : [
@@ -758,17 +772,21 @@ function generateJSONDataFromParam(param) {
 		// let tempoIntensity = tempObject['data']['tezina']
 
 		for (let j = 0; j < tempDates.length; j++) {
+			let show = true;
 			if(new Date().addDays(7, "00:00") < new Date(tempDates[j]['datum']))
-				continue
+				show = false
+
 			let dateBorder = new Date();
 			dateBorder.setHours(dateBorder.getHours() - 24) // Get 1 day before
-
 			if(dateBorder > new Date(tempDates[j]['datum']) )
-				continue
+				show = false
+
+
 			let date = tempDates[j]['datum']
 
 			let terminObject = new Object()
 					terminObject['dan'] = new Date(date).getDay()
+					terminObject['show'] = show
 					terminObject['datetime'] = tempDates[j]['datum']
 					terminObject['date'] = tempDates[j]['datum'].split('T')[0]
 					terminObject['vreme'] = new Date(tempDates[j]['datum']).getHours() +":"+
@@ -943,8 +961,9 @@ function cancelAppointment(button) {
 }
 
 function disableButtonDependingOnTime() {
-	if(typeof trainingTableVue == 'undefined' || trainingTableVue == null)
-		return
+	if(typeof trainingTableVue == 'undefined' || trainingTableVue == null) {
+		return;
+	}
 	let vueDataList = trainingTableVue.getData();
 	let now = new Date()
 	let userAppointments = window.sessionStorage.getItem('userAppointments')
@@ -954,8 +973,8 @@ function disableButtonDependingOnTime() {
 		let name = vueDataList[i]['name']
 		for(let j = 0; j < vueDataList[i]['termini'].length;j++) {
 			let terminDateTime = new Date(vueDataList[i]['termini'][j]['datetime'])
-			let terminDateTimeTemp = new Date(vueDataList[i]['termini'][j]['datetime'])
-			terminDateTime.setMinutes(terminDateTime.getMinutes() - 30)
+			let terminDateTimeTemp = moment(terminDateTime).subtract(30,'m').toDate();
+
 			let fullname = name+"_"+j
 			let zakazao = false
 			if(userAppointments != null) {
@@ -966,9 +985,7 @@ function disableButtonDependingOnTime() {
 			}
 			// Ako je zakazao i ako je manje od trideset 
 			// ILI ako je pocelo
-			
-			if(((terminDateTime < now) && zakazao) || 
-				 ((terminDateTimeTemp <= now) && !zakazao)) {
+			if(terminDateTimeTemp <= now && zakazao) {
 				$('#'+fullname).attr('disabled', true)
 			}
 		}
@@ -979,8 +996,8 @@ function disableButtonDependingOnTime() {
 
 }
 
-setInterval(disableButtonDependingOnTime, 10000)
-setInterval(checkUserArrival, 10000)
+setInterval(disableButtonDependingOnTime, 1000)
+setInterval(checkUserArrival, 1000)
 /**
  * Ako sto puta dodje, sto puta ce biti dodat
  */
@@ -1111,6 +1128,23 @@ function nutritionistAppointment(param) {
 	let datum = forma.date.value
 	let tel = forma.tel.value
 	let opis = forma.opis.value
+	let regex = /^[+][0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{3,4}$/g
+	let email_regex = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/g
+	if(regex.test(tel) == false){
+		Swal.fire({
+			title: 'Telefon nije u dobrom formatu!',
+			icon: 'error',
+		})
+		return null;
+	};
+	if (email_regex.test(email) == false){
+		Swal.fire({
+			title: 'Email nije u dobrom formatu!',
+			icon: 'error',
+		})
+
+		return null;
+	}
 	if(new Date(datum) < new Date()) {
 		Swal.fire({
 			title: 'Datum ne moze da bude u proslosti!',
@@ -1145,22 +1179,38 @@ function nutritionistAppointment(param) {
 }
 
 function massageAppointment(param) {
-
-
 	let forma = param
 	let name = forma.ime.value
 	let prezime = forma.prezime.value
 	let email = forma.email.value
+	let regex = /^[+][0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{3,4}$/g
+	let email_regex = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/g
 	let datum = forma.date.value
 	let tel = forma.tel.value
 	let opis = forma.opis.value
+	if(regex.test(tel) == false){
+		Swal.fire({
+			title: 'Telefon nije u dobrom formatu!',
+			icon: 'error',
+		})
+		return null;
+	};
+	if (email_regex.test(email) == false){
+		Swal.fire({
+			title: 'Email nije u dobrom formatu!',
+			icon: 'error',
+		})
+
+		return null;
+	}
+
 	if(new Date(datum) < new Date()) {
 		Swal.fire({
 			title: 'Datum ne moze da bude u proslosti!',
 			icon: 'error',
 		  })
 		  
-		return
+		return null;
 	}
 	let stringForPDF = "Ime: " + name+"\n"
 					 + "Prezime: " + prezime + "\n"
@@ -1180,7 +1230,6 @@ function massageAppointment(param) {
 	  }).then((result) => {
 		if (result.value) {
 			var doc = new jsPDF()
-
 			doc.text(stringForPDF, 10, 10)
 			doc.save('ZahtevZaMasazu.pdf')
 		}
@@ -1200,7 +1249,7 @@ function getDay(date) {
 			return 'Petak'
 		case 6:
 			return 'Subota'
-		case 7: 
+		case 0:
 			return 'Nedelja'
 	}
 }
