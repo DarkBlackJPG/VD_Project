@@ -1,6 +1,3 @@
-var languageType = false // 0 - SR, 1 - EN
-
-
 var vueForTrainingSearch = new Vue({
 	el: '#treninzi',
 	data: {
@@ -42,9 +39,6 @@ var vueForTrainingSearch = new Vue({
 			  }
 			
 			this.projects.sort(compare)
-		},
-		setLanguageType: function(param) {
-			this.language = param
 		},
 		sortByTrajanje: function() {
 			function compare(a, b) {
@@ -90,8 +84,6 @@ var vueForTrainingSearch = new Vue({
 
 	}
 })
-vueForTrainingSearch.setLanguageType(languageType)
-
 
 var trainingRatingsPage = new Vue({
 	el: '#searchedTraining',

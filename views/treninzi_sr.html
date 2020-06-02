@@ -108,8 +108,7 @@
                     <span class="filter border-bottom border-danger"  v-bind:class="{ active: currentFilter === 'Core' }" v-on:click="setFilter('Core')">Core</span>
                     <br>
                     <span class="border-bottom border-danger mr-4" v-on:click="sortByTezina()">
-                        <span v-if="language">Sortiranje po tezini</span>
-                        <span v-else>Sort by Difficulty</span>
+                        <span>Sortiranje po tezini</span>
                     </span>
                     <span class="border-bottom border-danger mr-4" v-on:click="sortByIme()">Sortiranje po imenu</span>
                     <span class="border-bottom border-danger mr-4" v-on:click="sortByTrajanje()">Sortiranje po trajanju</span>
@@ -125,19 +124,14 @@
                     <div class="card col-12 bg-light-black border-secondary rounded-0 border mb-3 p-0">
                         <img class="card-img-top img-fluid p-0 m-0" width="100%" v-bind:src="project.image">
                         <div class="card-body text-center">
-                            <a v-bind:href="'trening_sr.html?type='+project.link" class="filter-link bungee" v-if="language"><h4>{{project.title}}</h4></a>
-                            <a v-bind:href="'trening_sr.html?type='+project.link" class="filter-link bungee" v-else><h4>{{project.title_en}}</h4></a>
-                            <p v-if="language"> Trajanje: {{project.trajanje}}</p>
-                            <p v-else> Duration: {{project.trajanje}}</p>
-                            <p v-if="language"> Tezina: {{project.tezina}}</p>
-                            <p v-else>Difficulty: {{project.tezina}}</p>
+                            <a v-bind:href="'trening_sr.html?type='+project.link" class="filter-link bungee"><h4>{{project.title}}</h4></a>
+                            <p>Trajanje: {{project.trajanje}}</p>
+                            <p>Tezina: {{project.tezina}}</p>
                         </div>
                         
                       </div>
                 </div>
             </transition-group>
-
-
         </div>
 
 
