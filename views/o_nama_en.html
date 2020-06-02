@@ -9,35 +9,34 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     
-    <link href="../../css/main.css" rel="stylesheet"/>
+    <link href="../css/main.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/662634c78e.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="loadDataForTraining()" >
+<body>
     
-    <div class="container-fluid p-0 comfortaa" id="searchedTraining"> <div class="row fixed-top">
+    <div class="container-fluid p-0 comfortaa"> <div class="row fixed-top">
             
         <div class="col-12 comfortaa">
             
             <nav class="navbar  navbar-expand-lg navbar-dark bg-black">
-                <a class="navbar-brand bungee" href="index.html"><img src="../../assets/logo.png" width="50px"/>&nbsp;AlwaysStop Fitness</a>
+                <a class="navbar-brand bungee" href="index_en.htm"><img src="../assets/logo.png" width="50px"/>&nbsp;AlwaysStop Fitness</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="index_en.htm">Home</a>
                           </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Language
                             </a>
                             <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown2">
-                                <a class="dropdown-item bg-dark-hover text-white" href="index.html">Srpski</a>
-                                <a class="dropdown-item bg-dark-hover text-white" href="../en/index.html">English</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="o_nama_sr.htm">Srpski</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="o_nama_en.htm">English</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -45,9 +44,9 @@
                                 Services
                             </a>
                             <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item bg-dark-hover text-white" href="treninzi.html">Trainings</a>
-                                <a class="dropdown-item bg-dark-hover text-white" href="nutricionista.html">Nutritional specialist</a>
-                                <a class="dropdown-item bg-dark-hover text-white" href="masaze.html">Massages</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="treninzi_en.htm">Trainings</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="nutricionista_en.htm">Nutritional specialist</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="masaze_en.htm">Massages</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown active">
@@ -55,17 +54,17 @@
                                 Appointments
                             </a>
                             <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown3">
-                                <a class="dropdown-item bg-dark-hover text-danger" href="zakazivanje_trening.html">Training booking</a>
-                                <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_nutri.html">Nutritional specialist appointments</a>
-                                <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_masaza.html">Massage appointments</a>
+                                <a class="dropdown-item bg-dark-hover text-danger" href="zakazivanje_trening_en.htm">Training booking</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_nutri_en.htm">Nutritional specialist appointments</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_masaza_en.htm">Massage appointments</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="moj_nalog.html">My account</a>
+                            <a class="nav-link" href="moj_nalog_en.htm">My account</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="o_nama.html">About us</a>
+                            <a class="nav-link" href="o_nama_en.htm">About us</a>
                         </li>
 
                     </ul>
@@ -73,108 +72,57 @@
 
             </nav>
         <div class="row pl-4 text-white bg-breadcrum">
-            <a href="../../index.html" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Main</a>
-            <a href="#" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Trainings</a>
+            <a href="index_en.htm" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Main</a>
+            <a href="#" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;About us</a>
       </div>
     </div>
     </div>
         <div class="jumbotron-fluid vertical-center jumbotron-picture" style="height: 60vh;">
-            
            <div class="container-fluid m-0 p-0 text-center text-white">
                <div class="semi-transparent-bg p-4" style="width:auto">
-                    <h1 style="font-size: 4.5em; " > {{name}} </h1>
-                    <h4 id="avgScore" class="text-danger"></h4>
-                    <h5>{{comments.length}} Reviews</h5>
+                    <h1 style="font-size: 4.5em;" class="bungee">We're here... for you.</h1>
                </div>
            </div>
         </div>
-        <div class="row p-0 m-0 bg-black justify-content-center p-3 border-top border-bottom border-info" >
-            <div class="col-12 text-center bungee">
-                <h1>Description</h1>
+        <div class="row p-4 m-0 text-center bg-black border-info border-top border-bottom">
+            <div class="col-12">
+                <h1 class="bungee">The history that drove us to become the best</h1>
             </div>
-            <div class="col-12 p-1 text-center"  >
-                <p>{{description}}</p>
-            </div>
-
+            <div class="col-12 text-center">
+                <p class="col-12 offset-lg-3 col-lg-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloribus molestiae perspiciatis ipsa esse dolor nesciunt pariatur! Ullam sint iusto repellendus itaque aliquid nulla vero numquam, eos placeat, cumque ab?</p>
+            </div> 
         </div>
-        <div class="row p-0 m-0 bg-black justify-content-center p-3 border-top border-bottom border-info" >
-            <div class="col-12 text-center bungee">
-                <h1>Images</h1>
-            </div>
-            <div class="col-4 p-2"  v-for="picture in photoGalleryLinks">
-                
-            </div>
-
-        </div>
-        <div class="row p-0 m-0 bg-black justify-content-center p-3 border-top border-bottom border-info" >
-            <div class="col-12 text-center bungee">
-                <h1>Videos</h1>
-            </div>
-            <div class="col-4 p-2"  v-for="video in videoLinks">
-                No video available
-            </div>
-
-        </div>
-        <div class="row p-0 m-0 bg-black justify-content-center p-3 border-top border-bottom border-info" >
-           
-            <div class="col-12 text-center bungee">
-                <h1>Comments</h1>
-            </div>
+        <div class="row p-4 m-0 justify-content-center bg-black border-info border-top border-bottom">
+            <div class="row"><h1 class="bungee">Take a look at the atmosphere</h1></div>
             
-            <div class="col-12 col-md-6 col-lg-4 p-2"  v-for="comment in comments">
-                <div class="card bg-dark">
-                    <div class="card-header">
-                        {{comment.user}}
-                    </div>
-                    <div class="card-body">
-                        Rating: {{comment.score}}<br>
-                        Comment: {{comment.comment}}<br>
-                    </div>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+            </div>
+            </div>
+        </div>
+        <div class="row p-4 m-0 justify-content-center bg-black border-info border-top border-bottom">
+            <div class="col-12 text-center">
+                <h1 class="bungee">We're proud because...</h1>
+            </div>
+            <div class="col-12 ">
+                <div class="col-12 offset-md-3 col-md-6 comfortaa">
+                    <table>
+                        <tr>
+                            <td class="col-12 col-md-6">
+                                <img src="../assets/a-man-grabs-a-metallic-handle-hanging-from-the-ceiling.jpg" class="col-12" alt="">
+                            </td>
+                            <td class="col-12 col-md-6" align="right">
+                                <p >We've won the international fitness club championship in 2017</p>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-            </div>
-
+            </div> 
+            </div> 
         </div>
         
-        <div class="row p-0 m-0 bg-black justify-content-center p-3 border-top border-bottom border-info" >
-            <div class="col-12 text-center bungee">
-                <h1>Leave a comment</h1>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 p-2" >
-                <form action="" class="form" name="commentForm" onsubmit="return false">
-                    <div class="form-group row">
-                        <label for="username" class="col-12 col-form-label">Username</label>
-                        <div class="col-12 ">
-                            <input type="text"class="form-control" name="username" id="username" required/>
-                        </div>
-                       
-                    </div>
-                    <div class="form-group row">
-                        <label for="ocena" class="col-12 col-form-label">Score</label>
-                        <div class="col-12 ">
-                            <input type="number" max="5" min="1" class="form-control" name="ocena" id="ocena" value="5" required/>
-                        </div>
-                       
-                    </div>
-                    <div class="form-group row">
-                        <label for="komentar" class="col-12 col-form-label">Rating</label>
-                        <div class="col-12 ">
-                            <textarea class="form-control" name="komentar" id="komentar" required>
-                            
-                                
-                            </textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        
-                        <div class="col-12 ">
-                            <button class="btn btn-primary" type="submit" onclick="submitComment(commentForm)">Send</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
         </div>
-        
+       
         <footer class="page-footer comfortaa text-light font-small blue pt-4 bg-dark border-top">
             <div class="container-fluid">
                 <div class="row m-0">
@@ -243,18 +191,48 @@
                             </div>
                         </div>
                         <hr>
-                        <p>
-                            Prices<br>
-                            Locations<br>
-                            Group trainings<br>
-                            Personal trainers<br>
-                            Women's section<br>
-                            Massages<br>
-                            Online payments<br>
-                            For businesses<br>
-                            Events<br>
-                            Blog<br>
-                        </p>
+                        <table style="margin: auto">
+                            <tr>
+                                <td>
+                                    <a href="index_en.html" class="footer_link">Home</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="treninzi_en.html" class="footer_link">Trainings</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="nutricionista_en.html" class="footer_link">Nutritional specialst</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="masaze_en.html" class="footer_link">Massages</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="zakazivanje_trening_en.html" class="footer_link">Training booking</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="zakazivanje_nutri_en.html" class="footer_link">Nutritional specialist appointments</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="zakazivanje_masaza_en.html" class="footer_link">Massage appointments</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="o_nama_en.html" class="footer_link">About us</a>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
                 <div class="row bg-dark text-white">
@@ -266,6 +244,7 @@
         </footer>
         
     </div>
-    <script src="../../js/main.js"></script>
+    <script src="../js/moment.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

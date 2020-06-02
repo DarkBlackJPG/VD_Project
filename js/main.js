@@ -1,4 +1,4 @@
-var languageType = true // true - sr, false -en
+var languageType = false // 0 - SR, 1 - EN
 
 
 var vueForTrainingSearch = new Vue({
@@ -7,19 +7,19 @@ var vueForTrainingSearch = new Vue({
 		language: true,
 		currentFilter: 'Svi',								
 		projects: [								// Opis pojedinacnih treninga
-			{id: 1,  tezina: 3, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Stop Pilates", title_en: "Stop Pilates2", image: "../../assets/trening2.png", category: 'Pilates', link: "stop-pilates"},
-			{id: 2,  tezina: 4, trajanje: 45, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Reformer Pilates",title_en: "Stop Pilates2", image: "../../assets/trening3.png", category: 'Pilates', link: "reformer-pilates"},
-			{id: 3,  tezina: 2, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Klasicni pilates",title_en: "Stop Pilates2", image: "../../assets/trening3.png", category: 'Pilates', link: "klasicni-pilates"},
-			{id: 4,  tezina: 1, trajanje: 45, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Trbusnjaci",title_en: "Stop Pilates2", image: "../../assets/trening4.png", category: 'Core', link: "trbusnjaci"},
-			{id: 5,  tezina: 5, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Trening izdrzljivosti",title_en: "Stop Pilates2", image: "../../assets/trening5.png", category: 'Core', link: "trening-izdrzljivosti"},
-			{id: 6,  tezina: 5, trajanje: 45, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Core Box",title_en: "Stop Pilates2", image: "../../assets/core-strength-fitness.jpg", category: 'Core', link: "core-box"},
-			{id: 7,  tezina: 4, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Sklekovi",title_en: "Stop Pilates2", image: "../../assets/Working-Out-With-Chalk.jpg", category: 'Core', link: "sklekovi"},
-			{id: 8,  tezina: 3, trajanje: 55, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "HIIT",title_en: "Stop Pilates2", image: "../../assets/a-man-grabs-a-metallic-handle-hanging-from-the-ceiling.jpg", category: 'Cardio', link: "hiit"},
-			{id: 9,  tezina: 2, trajanje: 74, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Trcanje",title_en: "Stop Pilates2", image: "../../assets/exercise-free-weights.jpg", category: 'Cardio', link: "trcanje"},
-			{id: 10, tezina: 3, trajanje: 66, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Stepenice",title_en: "Stop Pilates2", image: "../../assets/training1.png", category: 'Cardio', link: "stepenice"},
-			{id: 11, tezina: 3, trajanje: 62, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Feng Shui",title_en: "Stop Pilates2", image: "../../assets/woman-prepares-for-workout.jpg", category: 'Joga', link: "feng-shui"},
-			{id: 12, tezina: 1, trajanje: 61, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Moderna joga",title_en: "Stop Pilates2", image: "../../assets/landing.jpg", category: 'Joga', link: "moderna-joga"},
-			{id: 13, tezina: 3, trajanje: 63, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Stop Joga",title_en: "Stop Pilates2", image: "../../assets/landing.png", category: 'Joga', link: "stop-joga"},
+			{id: 1,  tezina: 3, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Stop Pilates", title_en: "Stop Pilates", image: "../assets/trening2.png", category: 'Pilates', link: "stop-pilates"},
+			{id: 2,  tezina: 4, trajanje: 45, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Reformer Pilates",title_en: "Reformer Pilates", image: "../assets/trening3.png", category: 'Pilates', link: "reformer-pilates"},
+			{id: 3,  tezina: 2, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Klasicni pilates",title_en: "Classic Pilates", image: "../assets/trening3.png", category: 'Pilates', link: "klasicni-pilates"},
+			{id: 4,  tezina: 1, trajanje: 45, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Trbusnjaci",title_en: "Sit ups", image: "../assets/trening4.png", category: 'Core', link: "trbusnjaci"},
+			{id: 5,  tezina: 5, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Trening izdrzljivosti",title_en: "Endurance training", image: "../assets/trening5.png", category: 'Core', link: "trening-izdrzljivosti"},
+			{id: 6,  tezina: 5, trajanje: 45, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Core Box",title_en: "Core Box", image: "../assets/core-strength-fitness.jpg", category: 'Core', link: "core-box"},
+			{id: 7,  tezina: 4, trajanje: 60, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Sklekovi",title_en: "Push Ups", image: "../assets/Working-Out-With-Chalk.jpg", category: 'Core', link: "sklekovi"},
+			{id: 8,  tezina: 3, trajanje: 55, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "HIIT",title_en: "HIIT", image: "../assets/a-man-grabs-a-metallic-handle-hanging-from-the-ceiling.jpg", category: 'Cardio', link: "hiit"},
+			{id: 9,  tezina: 2, trajanje: 74, description: "Lorem ipsum", description_en: "Lorem ipsum", title: "Trcanje",title_en: "Running", image: "../assets/exercise-free-weights.jpg", category: 'Cardio', link: "trcanje"},
+			{id: 10, tezina: 3, trajanje: 66, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Stepenice",title_en: "Stairs", image: "../assets/training1.png", category: 'Cardio', link: "stepenice"},
+			{id: 11, tezina: 3, trajanje: 62, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Feng Shui",title_en: "Feng Shui", image: "../assets/woman-prepares-for-workout.jpg", category: 'Joga', link: "feng-shui"},
+			{id: 12, tezina: 1, trajanje: 61, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Moderna joga",title_en: "Modern Yoga", image: "../assets/landing.jpg", category: 'Joga', link: "moderna-joga"},
+			{id: 13, tezina: 3, trajanje: 63, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Stop Joga",title_en: "Stop Yoga", image: "../assets/landing.png", category: 'Joga', link: "stop-joga"},
         ],
         descriptions: [ // Opis grupe treninga 
             {category: 'Pilates', description: "Lorem ipsum pilates" },
@@ -148,7 +148,7 @@ function checkIfUserAttended(trainingName) {
 	
 	let tempString = window.sessionStorage.getItem('userShowedUp')
 	if(tempString == null || tempString == '')
-		return false
+		return
 	tempString = tempString.split(',')
 	for(let i = 0; i < tempString.length - 1; i++) {
 		if("list-"+trainingName ==tempString[i].split('_')[0]){
@@ -287,11 +287,6 @@ var treninzi = {
 								"score" : 5,
 								"comment" : "Bas je mnogo kul"
 							},
-							{
-								"user" : "Marko2",
-								"score" : 5,
-								"comment" : "Bas je mnogo kul"
-							},
 
 						],
 						"termini" : [
@@ -304,11 +299,7 @@ var treninzi = {
 								"zakazano" : 5
 							},
 							{
-								"datum" : new Date().addDays(3, "13:00"),
-								"zakazano" : 7
-							},
-							{
-								"datum" : moment(new Date()).add(31, 'm').toDate(),
+								"datum" : new Date().addDays(4, "13:00"),
 								"zakazano" : 7
 							},
 							{
@@ -583,11 +574,6 @@ var treninzi = {
 							"score" : 5,
 							"comment" : "Bas je mnogo kul"
 						},
-						{
-							"user" : "Marko3",
-							"score" : 5,
-							"comment" : "Bas je mnogo kul"
-						},
 
 					],
 					"termini" : [
@@ -772,21 +758,17 @@ function generateJSONDataFromParam(param) {
 		// let tempoIntensity = tempObject['data']['tezina']
 
 		for (let j = 0; j < tempDates.length; j++) {
-			let show = true;
 			if(new Date().addDays(7, "00:00") < new Date(tempDates[j]['datum']))
-				show = false
-
+				continue
 			let dateBorder = new Date();
 			dateBorder.setHours(dateBorder.getHours() - 24) // Get 1 day before
+
 			if(dateBorder > new Date(tempDates[j]['datum']) )
-				show = false
-
-
+				continue
 			let date = tempDates[j]['datum']
 
 			let terminObject = new Object()
 					terminObject['dan'] = new Date(date).getDay()
-					terminObject['show'] = show
 					terminObject['datetime'] = tempDates[j]['datum']
 					terminObject['date'] = tempDates[j]['datum'].split('T')[0]
 					terminObject['vreme'] = new Date(tempDates[j]['datum']).getHours() +":"+
@@ -961,9 +943,8 @@ function cancelAppointment(button) {
 }
 
 function disableButtonDependingOnTime() {
-	if(typeof trainingTableVue == 'undefined' || trainingTableVue == null) {
-		return;
-	}
+	if(typeof trainingTableVue == 'undefined' || trainingTableVue == null)
+		return
 	let vueDataList = trainingTableVue.getData();
 	let now = new Date()
 	let userAppointments = window.sessionStorage.getItem('userAppointments')
@@ -973,8 +954,8 @@ function disableButtonDependingOnTime() {
 		let name = vueDataList[i]['name']
 		for(let j = 0; j < vueDataList[i]['termini'].length;j++) {
 			let terminDateTime = new Date(vueDataList[i]['termini'][j]['datetime'])
-			let terminDateTimeTemp = moment(terminDateTime).subtract(30,'m').toDate();
-
+			let terminDateTimeTemp = new Date(vueDataList[i]['termini'][j]['datetime'])
+			terminDateTime.setMinutes(terminDateTime.getMinutes() - 30)
 			let fullname = name+"_"+j
 			let zakazao = false
 			if(userAppointments != null) {
@@ -985,7 +966,9 @@ function disableButtonDependingOnTime() {
 			}
 			// Ako je zakazao i ako je manje od trideset 
 			// ILI ako je pocelo
-			if(terminDateTimeTemp <= now && zakazao) {
+			
+			if(((terminDateTime < now) && zakazao) || 
+				 ((terminDateTimeTemp <= now) && !zakazao)) {
 				$('#'+fullname).attr('disabled', true)
 			}
 		}
@@ -996,8 +979,8 @@ function disableButtonDependingOnTime() {
 
 }
 
-setInterval(disableButtonDependingOnTime, 1000)
-setInterval(checkUserArrival, 1000)
+setInterval(disableButtonDependingOnTime, 10000)
+setInterval(checkUserArrival, 10000)
 /**
  * Ako sto puta dodje, sto puta ce biti dodat
  */
@@ -1128,23 +1111,6 @@ function nutritionistAppointment(param) {
 	let datum = forma.date.value
 	let tel = forma.tel.value
 	let opis = forma.opis.value
-	let regex = /^[+][0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{3,4}$/g
-	let email_regex = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/g
-	if(regex.test(tel) == false){
-		Swal.fire({
-			title: 'Telefon nije u dobrom formatu!',
-			icon: 'error',
-		})
-		return null;
-	};
-	if (email_regex.test(email) == false){
-		Swal.fire({
-			title: 'Email nije u dobrom formatu!',
-			icon: 'error',
-		})
-
-		return null;
-	}
 	if(new Date(datum) < new Date()) {
 		Swal.fire({
 			title: 'Datum ne moze da bude u proslosti!',
@@ -1179,38 +1145,22 @@ function nutritionistAppointment(param) {
 }
 
 function massageAppointment(param) {
+
+
 	let forma = param
 	let name = forma.ime.value
 	let prezime = forma.prezime.value
 	let email = forma.email.value
-	let regex = /^[+][0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{3,4}$/g
-	let email_regex = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/g
 	let datum = forma.date.value
 	let tel = forma.tel.value
 	let opis = forma.opis.value
-	if(regex.test(tel) == false){
-		Swal.fire({
-			title: 'Telefon nije u dobrom formatu!',
-			icon: 'error',
-		})
-		return null;
-	};
-	if (email_regex.test(email) == false){
-		Swal.fire({
-			title: 'Email nije u dobrom formatu!',
-			icon: 'error',
-		})
-
-		return null;
-	}
-
 	if(new Date(datum) < new Date()) {
 		Swal.fire({
 			title: 'Datum ne moze da bude u proslosti!',
 			icon: 'error',
 		  })
 		  
-		return null;
+		return
 	}
 	let stringForPDF = "Ime: " + name+"\n"
 					 + "Prezime: " + prezime + "\n"
@@ -1230,6 +1180,7 @@ function massageAppointment(param) {
 	  }).then((result) => {
 		if (result.value) {
 			var doc = new jsPDF()
+
 			doc.text(stringForPDF, 10, 10)
 			doc.save('ZahtevZaMasazu.pdf')
 		}
@@ -1249,7 +1200,7 @@ function getDay(date) {
 			return 'Petak'
 		case 6:
 			return 'Subota'
-		case 0:
+		case 7: 
 			return 'Nedelja'
 	}
 }
@@ -1442,6 +1393,4 @@ function loadIndexPage() {
 	let bestRatedTrainings = getTopThree()
 
 	indexVueComponent.populateElements(bestRatedTrainings)
-
-
 }

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutritional specialst appointments</title>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    
+    <link href="../css/main.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/662634c78e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <div class="container-fluid p-0 comfortaa"> <div class="row fixed-top">
+            
+        <div class="col-12 comfortaa">
+            
+            <nav class="navbar  navbar-expand-lg navbar-dark bg-black">
+                <a class="navbar-brand bungee" href="index_en.html"><img src="../assets/logo.png" width="50px"/>&nbsp;AlwaysStop Fitness</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index_en.html">Home</a>
+                          </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Language
+                            </a>
+                            <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_nutri_sr.html">Srpski</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_nutri_en.html">English</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item bg-dark-hover text-white" href="treninzi_en.html">Trainings</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="nutricionista_en.html">Nutritional specialist</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="masaze_en.html">Massages</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Appointments
+                            </a>
+                            <div class="dropdown-menu bg-black " aria-labelledby="navbarDropdown3">
+                                <a class="dropdown-item bg-dark-hover text-danger" href="zakazivanje_trening_en.html">Training booking</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_nutri_en.html">Nutritional specialist appointments</a>
+                                <a class="dropdown-item bg-dark-hover text-white" href="zakazivanje_masaza_en.html">Massage appointments</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="moj_nalog_en.html">My account</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="o_nama_en.html">About us</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </nav>
+        <div class="row pl-4 text-white bg-breadcrum">
+            <a href="index_en.html" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Main</a>
+            <a href="nutricionista_en.html" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Nutritional specialist</a>
+            <a href="#" class="btn breadcrum-link" > <i class="fas fa-caret-right"></i> &nbsp;Nutritional specialist appointments</a>
+      </div>
+    </div>
+    </div>
+        <div class="jumbotron-fluid vertical-center jumbotron-picture" style="height: 60vh;">
+           <div class="container-fluid m-0 p-0 text-center text-white">
+               <div class="semi-transparent-bg p-4" style="width:auto">
+                    <h1 style="font-size: 4.5em; ">Set an appointment with a nutritional specialist</h1>
+               </div>
+           </div>
+        </div>
+        <div class="row p-4 m-0 justify-content-center bg-black border-info border-top border-bottom">
+            <div class="col-12 col-md-9 text-center justify-content-center">
+                <h1 class="bungee">
+                    We're here for you, just give us a call!
+                </h1>
+            </div>
+            <div class="col-12 mt-5 col-md-9 col-lg-6">
+                <form  name="zakaziNutriSr" id="zakaziNutriSr">
+                    <div class="form-group row">
+                        <label for="inputName" class="col-form-label col-2"> First name: </label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" id="inputName" name="ime" placeholder="Marko" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputSurname" class="col-form-label col-2"> Last name: </label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" id="inputSurname" name="prezime" placeholder="Markovic" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail" class="col-form-label col-2"> Email: </label>
+                        <div class="col-10">
+                            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="temp@temp.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputDate" class="col-form-label col-2"> Date: </label>
+                        <div class="col-10">
+                            <input type="date" class="form-control" id="inputDate" name="date">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPhone" class="col-form-label col-2"> Phone number: </label>
+                        <div class="col-10">
+                            <input type="tel" class="form-control" id="inputPhone" name="tel" placeholder="+381-60-1111-2222" pattern="^[+][0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{3,4}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="textArea" class="col-form-label col-2">Description: </label>
+                        <div class="col-10">
+                            <textarea class="form-control" id="textArea" rows="4" name="opis" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                        <button type="submit" class="btn btn-secondary mb-2 float-right" onclick="nutritionistAppointment(zakaziNutriSr)">Send</button>
+                        </div>
+                    
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+        
+
+        <footer class="page-footer comfortaa text-light font-small blue pt-4 bg-dark border-top">
+            <div class="container-fluid">
+                <div class="row m-0">
+                    <div class="col-12  col-md-4 ">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h4 style="font-weight: normal;">AlwaysStop Fitness</h4>
+                            </div>
+                        </div>
+                        <hr >
+                        <div class="row offset-3">
+                            <i class="fas fa-location-arrow"></i> &nbsp;Banovo brdo
+                        </div>
+                        <div class="row offset-3">
+                            <i class="fas fa-envelope"></i> &nbsp;administration@alwaysstopfitness.rs
+                        </div>
+                        <div class="row offset-3">
+                            <i class="fas fa-globe"></i> &nbsp;alwaysstopfitness.rs
+                        </div>
+                        <br>
+                        <div class="row offset-3">
+                            <p>
+                                Business: Fitness club <br>
+    
+                                Business code: 9313<br>
+    
+                                PIB: 108988929<br>
+    
+                                Registry number: 21106364<br>
+                            </p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="col-12  p-1 col-md-4">
+                        <div class="row p-0">
+                            <div class="col-12 text-center">
+                                <h4 style="font-weight: normal;">AlwaysStop Fitness locations</h4>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row offset-3">
+                            <p>
+                                Autokomanda  +381 62 570 434 <br>
+
+                                Dimitrijala   +381 11 403 95 36<br>
+
+                                Big Fashion Park   +381 11 4022 488<br>
+
+                                Aviv Park   +381 11 630 43 02<br>
+
+                                Novi Sad   +381 21 32 70 200<br>
+
+                                Banovo Brdo   +381 11 454 12 62<br>
+
+                                Obrenovac   +381 63 436 291<br>
+
+                                Vojislava Ilića   +381 11 454 30 14<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-1 col-md-4 text-center">
+                        <div class="row p-0">
+                            <div class="col-12 text-center">
+                                <h4 style="font-weight: normal;">Useful links</h4>
+                            </div>
+                        </div>
+                        <hr>
+                        <table style="margin: auto">
+                            <tr>
+                                <td>
+                                    <a href="index_en.html" class="footer_link">Home</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="treninzi_en.html" class="footer_link">Trainings</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="nutricionista_en.html" class="footer_link">Nutritional specialst</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="masaze_en.html" class="footer_link">Massages</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="zakazivanje_trening_en.html" class="footer_link">Training booking</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="zakazivanje_nutri_en.html" class="footer_link">Nutritional specialist appointments</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="zakazivanje_masaza_en.html" class="footer_link">Massage appointments</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="o_nama_en.html" class="footer_link">About us</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row bg-dark text-white">
+                    <div class="col-12 p-4 text-center">
+                        <h6><i>Copyright 2020, Luka Špehar, Stefan Teslić, Department of Software Engineering, Faculty of Electrical Engineering, University of Blegrade</i></h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    </div>
+    <script src="../js/moment.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
