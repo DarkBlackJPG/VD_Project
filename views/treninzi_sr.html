@@ -102,7 +102,7 @@
             <div class="row col-12 text-center justify-content-center mb-4">
                 <div class="filters">
                     <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Svi' }" v-on:click="setFilter('Svi')">Svi</span>
-                    <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Cardio' }" v-on:click="setFilter('Cardio')">Cardio</span>
+                    <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Cardio' }" v-on:click="setFilter('Cardio')">Kardio</span>
                     <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Joga' }" v-on:click="setFilter('Joga')">Joga</span>
                     <span class="filter border-bottom border-danger mr-4"  v-bind:class="{ active: currentFilter === 'Pilates' }" v-on:click="setFilter('Pilates')">Pilates</span>
                     <span class="filter border-bottom border-danger"  v-bind:class="{ active: currentFilter === 'Core' }" v-on:click="setFilter('Core')">Core</span>
@@ -128,7 +128,6 @@
                             <p>Trajanje: {{project.trajanje}}</p>
                             <p>Tezina: {{project.tezina}}</p>
                         </div>
-                        
                       </div>
                 </div>
             </transition-group>

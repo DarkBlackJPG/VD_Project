@@ -19,10 +19,10 @@ var vueForTrainingSearch = new Vue({
 			{id: 13, tezina: 3, trajanje: 63, description: "Lorem ipsum", description_en: "Lorem ipsum",  title: "Stop Joga",title_en: "Stop Yoga", image: "../assets/landing.png", category: 'Joga', link: "stop-joga"},
         ],
         descriptions: [ // Opis grupe treninga 
-            {category: 'Pilates', description: "Lorem ipsum pilates" },
-            {category: 'Core', description: "Lorem ipsum Core" },
-            {category: 'Cardio', description: "Spehar ipsum Cardio" },
-            {category: 'Joga', description: "Lorem ipsum Joga" },
+            {category: 'Pilates', description: "Lorem ipsum pilates", description_en: "Asdf Pilates" },
+            {category: 'Core', description: "Lorem ipsum Core", description_en: "Asdf Core" },
+            {category: 'Cardio', description: "Spehar ipsum Cardio", description_en: "Asdf Cardio" },
+            {category: 'Joga', description: "Lorem ipsum Joga", description_en: "Asdf Yoga" },
         ]
 	},
 	methods: {

@@ -110,16 +110,15 @@
                     <span class="border-bottom border-danger mr-4" v-on:click="sortByTezina()">
                         <span>Sort by Difficulty</span>
                     </span>
-                    <span class="border-bottom border-danger mr-4" v-on:click="sortByIme()">Sortiranje po imenu</span>
-                    <span class="border-bottom border-danger mr-4" v-on:click="sortByTrajanje()">Sortiranje po trajanju</span>
-                    <span class="border-bottom border-danger mr-4" v-on:click="resetFilter()">Resetuj filtre</span>
+                    <span class="border-bottom border-danger mr-4" v-on:click="sortByIme()">Sort by name</span>
+                    <span class="border-bottom border-danger mr-4" v-on:click="sortByTrajanje()">Sort by duration</span>
+                    <span class="border-bottom border-danger mr-4" v-on:click="resetFilter()">Reset filter</span>
                 </div>
             </div>
             <div v-if="currentFilter !== 'Svi' && currentFilter === description.category" v-for="description in descriptions" class="mb-3">
-                <h5 class="bungee">{{description.description}}</h5>
+                <h5 class="bungee">{{description.description_en}}</h5>
             </div>
             <transition-group class="row  justify-content-center"  name="projects">
-                
                 <div class="col-12 col-sm-12 col-md-6 col-lg-3" v-if="currentFilter === project.category || currentFilter === 'Svi'" v-bind:key="project.title" v-for="project in projects">
                     <div class="card col-12 bg-light-black border-secondary rounded-0 border mb-3 p-0">
                         <img class="card-img-top img-fluid p-0 m-0" width="100%" v-bind:src="project.image">
